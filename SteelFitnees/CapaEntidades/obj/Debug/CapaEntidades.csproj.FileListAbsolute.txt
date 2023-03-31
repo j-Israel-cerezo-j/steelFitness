@@ -25,3 +25,12 @@ C:\Users\synoc\Downloads\SteelFitnees\SteelFitnees\CapaEntidades\obj\Debug\CapaE
 C:\Users\synoc\Downloads\SteelFitnees\SteelFitnees\CapaEntidades\obj\Debug\CapaEntidades.csproj.CopyComplete
 C:\Users\synoc\Downloads\SteelFitnees\SteelFitnees\CapaEntidades\obj\Debug\CapaEntidades.dll
 C:\Users\synoc\Downloads\SteelFitnees\SteelFitnees\CapaEntidades\obj\Debug\CapaEntidades.pdb
+C:\Users\jisra\Downloads\steelFitnes-master\steelFitnes-master\steelFitness\SteelFitnees\CapaEntidades\bin\Debug\CapaEntidades.dll
+C:\Users\jisra\Downloads\steelFitnes-master\steelFitnes-master\steelFitness\SteelFitnees\CapaEntidades\bin\Debug\CapaEntidades.pdb
+C:\Users\jisra\Downloads\steelFitnes-master\steelFitnes-master\steelFitness\SteelFitnees\CapaEntidades\bin\Debug\Validaciones.dll
+C:\Users\jisra\Downloads\steelFitnes-master\steelFitnes-master\steelFitness\SteelFitnees\CapaEntidades\bin\Debug\Validaciones.pdb
+C:\Users\jisra\Downloads\steelFitnes-master\steelFitnes-master\steelFitness\SteelFitnees\CapaEntidades\obj\Debug\CapaEntidades.csproj.AssemblyReference.cache
+C:\Users\jisra\Downloads\steelFitnes-master\steelFitnes-master\steelFitness\SteelFitnees\CapaEntidades\obj\Debug\CapaEntidades.csproj.CoreCompileInputs.cache
+C:\Users\jisra\Downloads\steelFitnes-master\steelFitnes-master\steelFitness\SteelFitnees\CapaEntidades\obj\Debug\CapaEntidades.csproj.CopyComplete
+C:\Users\jisra\Downloads\steelFitnes-master\steelFitnes-master\steelFitness\SteelFitnees\CapaEntidades\obj\Debug\CapaEntidades.dll
+C:\Users\jisra\Downloads\steelFitnes-master\steelFitnes-master\steelFitness\SteelFitnees\CapaEntidades\obj\Debug\CapaEntidades.pdb

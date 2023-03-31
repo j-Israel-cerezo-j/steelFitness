@@ -26,6 +26,7 @@
                             <th class="column-title" style="display: table-cell;">No. </th>
                             <th class="column-title" style="display: table-cell;">Sucursal</th>
                             <th class="column-title" style="display: table-cell;">Ubicación</th>
+                            <th class="column-title" style="display: table-cell;">Día</th>
                             <th class="column-title" style="display: table-cell;">Hora de apertura</th>
                             <th class="column-title" style="display: table-cell;">Hora de término</th>
                             <th class="column-title no-link last" style="display: table-cell;"><span class="nobr">Editar</span>
@@ -49,6 +50,7 @@
                                     <td class=" ">${cont++}</td>`
             html += ` <td class=" ">${json[i].nombre}</td>`
             html += ` <td class=" ">${json[i].ubicacion}</td>`
+            html += ` <td class=" ">${json[i].dia}</td>`
             html += ` <td class=" ">${json[i].horaInicio}</td>`
             html += ` <td class=" ">${json[i].horaCierre}</td>`
             html += `<td class="last"><button id="${json[i].idHorario}" type="button" onclick="recoverDataa(event)" class="btn btn-success fa fa-pencil" style="height: 40px;width: 40px;"></button></td>`

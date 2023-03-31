@@ -158,6 +158,34 @@ namespace CapaDatos
             }
             return products;
         }
+        public DataTable tableProductsByIdBranche(int id)
+        {
+            DataTable schedules = new DataTable();
+            SqlDataReader renglon;
+            try
+            {
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "pro_tableProductsByIdSucursal";
+                Comando.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));
+                Comando.Parameters["@id"].Value = id;
+                Conexion.Open();
+                renglon = Comando.ExecuteReader();
+                schedules.Load(renglon);
+            }
+            catch (SqlException e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+                Comando.Parameters.Clear();
+            }
+            return schedules;
+        }
         public bool delete(string strIds)
         {
             bool ban;

@@ -49,7 +49,8 @@ namespace CapaLogicaNegocio.Services
         }
         public string jsonHoursTable()
         {
-            return Converter.ToJson(schedulesTable.tableSchedules()).ToString();
+            var namesTypeDateTime = new List<string>() { "horaInicio", "horaCierre" };
+            return Converter.ToJson(schedulesTable.tableSchedules(),true, namesTypeDateTime).ToString();
         }
         public bool deleteHours(string strIds)
         {

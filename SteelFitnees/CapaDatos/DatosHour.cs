@@ -182,7 +182,7 @@ namespace CapaDatos
             }
             return ban;
         }
-        public DataTable tableSchedules()
+        public DataTable tableHours()
         {
             DataTable schedules = new DataTable();
             SqlDataReader renglon;
@@ -190,6 +190,34 @@ namespace CapaDatos
             {
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.CommandText = "pro_tableHorarios";
+                Conexion.Open();
+                renglon = Comando.ExecuteReader();
+                schedules.Load(renglon);
+            }
+            catch (SqlException e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+                Comando.Parameters.Clear();
+            }
+            return schedules;
+        }
+        public DataTable horariosByIdBranche(int id)
+        {
+            DataTable schedules = new DataTable();
+            SqlDataReader renglon;
+            try
+            {
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "pro_horariosByIdSucursal";
+                Comando.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));
+                Comando.Parameters["@id"].Value = id;
                 Conexion.Open();
                 renglon = Comando.ExecuteReader();
                 schedules.Load(renglon);

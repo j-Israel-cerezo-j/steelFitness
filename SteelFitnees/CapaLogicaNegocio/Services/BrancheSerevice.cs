@@ -30,11 +30,12 @@ namespace CapaLogicaNegocio.Services
         private ImageList imageList = new ImageList();
         private Delete delete = new Delete();
         private Random rd = new Random();
+        private DayList dayList = new DayList();    
         private BranchesTable branchesTable=new BranchesTable();
+        private SchedulesTable schedulesTable = new SchedulesTable();   
+        private ProductTable productTable=new ProductTable();
         public bool add(Dictionary<string, string> request, List<HttpPostedFile> filesList)
-        {
-            
-
+        {            
             bool ban = false;
             var camposEmptysOrNull = Validation.isNullOrEmptys(request);
             if (camposEmptysOrNull.Count == 0)
@@ -80,7 +81,6 @@ namespace CapaLogicaNegocio.Services
             }
             return ban;
         }
-
         public bool update(Dictionary<string, string> request,string strId, List<HttpPostedFile> filesList)
         {
             bool ban = false;
@@ -172,6 +172,45 @@ namespace CapaLogicaNegocio.Services
             var branches = new List<Branche>();
             branches.Add(brancherData.dataBrancheByIdBranche(Convert.ToInt32(strId)));
             return Converter.ToJson(branches);
+        }
+        public Branche getBrancheById(string strId)
+        {
+            if (strId == "")
+            {
+                throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
+            }
+            return brancherData.dataBrancheByIdBranche(Convert.ToInt32(strId));
+        }
+        public List<Image> getImageListById(string strId)
+        {
+            if (strId == "")
+            {
+                throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
+            }
+
+            return imageList.listImagesByIdBranche(Convert.ToInt32(strId));
+        }
+        public List<Day> getDays()
+        {
+            return dayList.listDays();
+        }
+
+        public string jsontableSchedulesByIdBrancheTable(string strId)
+        {
+            if (strId == "")
+            {
+                throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
+            }
+            var namesTypeDateTime=new List<string>() { "horaInicio", "horaCierre" };
+            return Converter.ToJson(schedulesTable.tableSchedulesByIdBranche(Convert.ToInt32(strId)),true, namesTypeDateTime).ToString();
+        }
+        public string getProductsById(string strId)
+        {
+            if (strId == "")
+            {
+                throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
+            }
+            return Converter.ToJson(productTable.tableByIdBranche(Convert.ToInt32(strId))).ToString();
         }
     }
 }

@@ -93,6 +93,7 @@
     <Compile Include="Tables\BranchesTable.cs" />
     <Compile Include="Tables\DaysTable.cs" />
     <Compile Include="Tables\ProductBrancheTable.cs" />
+    <Compile Include="Tables\ProductTable.cs" />
     <Compile Include="Tables\SchedulesTable.cs" />
     <Compile Include="Updates\BrancheUpdate.cs" />
     <Compile Include="Updates\DayUpdate.cs" />
