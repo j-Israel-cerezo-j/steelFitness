@@ -27,5 +27,7 @@
     if (ban) {
         document.getElementById("containerProducts").innerHTML = htmlProducts
 
+    } else {
+        document.getElementById("containerProducts").innerHTML = `<h1>Sin productos por el momento</h1>`
     }
 }

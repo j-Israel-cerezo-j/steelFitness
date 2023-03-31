@@ -12,7 +12,7 @@
 			<h1 id="labelMsjAction">Redactar correo</h1>
 			<br>
 			<form id="form1" class="row g-3 needs-validation" novalidate>
-				<div class="row ">
+				<div class="row mt-4">
 					<label class="form-label"><b>Asunto:</b></label>
 					<div class="col-lg-6 col-md-6 col-sm-12 col-xsm-12 form-group" style="margin-top:15px;padding-right: 0px;padding-left:10px;">						
 						<input  style="border-radius:6px" type="text" class="form-control has-feedback-left" required="required" name="asunto" id="asunto" placeholder="Asunto del correo"  onkeyup="onkeyupInputEmtyy('asunto')">
@@ -25,9 +25,66 @@
 						<span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
 					</div>
 				</div>
-				<div class="row" style="justify-content:center">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xsm-12 form-group" style="margin-top:15px;padding-right: 0px;padding-left:10px;">
-						<textarea style="border-radius:6px" class="form-control" rows="12" required="required" name="info" id="info" placeholder="Redacte el correo a mandar aqui por favor"  onkeyup="onkeyupInputEmtyy('info')"></textarea>						
+				<div class="row mt-4">
+					<label class="form-label"><b>Correo remitente:</b></label>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xsm-12 form-group mt-3" style="padding-right: 0px;padding-left:10px;">						
+						<input  style="border-radius:6px" type="text" class="form-control has-feedback-left" required="required" name="senderMail" id="senderMail" placeholder="Correo remitente"  onkeyup="onkeyupInputEmtyy('senderMail')">
+						<div class="valid-feedback">
+								¡ Buen trabajo!
+						</div>
+						<div class="invalid-feedback">
+							El correo es requerido
+						</div>
+						<span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
+					</div>					
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xsm-12 form-group" style="margin-top:15px;padding-right: 0px;padding-left:10px;">
+						<input  style="border-radius:6px" type="password" class="form-control has-feedback-left" required="required" name="senderPassword" id="senderPassword" placeholder="Contraseña"  onkeyup="onkeyupInputEmtyy('senderPassword')">
+						<span style="position: absolute;right:10px;top:15px">
+                            <svg style="display:block" id="slash" xmlns="http://www.w3.org/2000/svg" width="16" onclick="hideshow('senderPassword','slash','eye')" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                              <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                              <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                            </svg>
+		            	</span>
+                        <span style="position: absolute;right:10px;top:15px">
+                            <svg style="display:none" id="eye" xmlns="http://www.w3.org/2000/svg" width="16" onclick="hideshow('senderPassword','slash','eye')" height="16" fill="currentColor" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
+                                <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
+                                <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"/>
+                            </svg>
+		            	</span>
+						<div class="valid-feedback">
+								¡ Buen trabajo!
+						</div>
+						<div class="invalid-feedback">
+							La contraseña es requerida
+						</div>
+						<span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
+					</div>
+				</div>
+				<div class="row mt-3">					
+					<div class="col-lg-6 col-md-6 col-sm-12 form-group">
+						<div class="mb-3" id="containerFilePhotograph">
+							<input style="border-radius:6px" accept="image/jpeg,image/png"  class="form-control" required="required" type="file" id="formFile" onchange="MostraIma(this)" name="image">
+							 <div class="valid-feedback">
+								¡ Buen trabajo!
+							</div>
+							<div class="invalid-feedback">
+								La imagen es requerida
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12 form-group">
+						<div  class="card reflejo " style="width: 13.9rem;text-align:center">
+							<img  id="image" alt="Cargar imagen por favor." src="" height="200" width="220"/>
+							<div class="card-body">
+								<div id="msjImagenCargadaAutomatica"></div>
+							</div>
+						</div>
+					</div>
+				</div>				
+				<div class="row mt-4" style="justify-content:center">
+					<label class="form-label"><b>Cuerpo del correo:</b></label>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xsm-12 form-group" style="padding-right: 0px;padding-left:10px;">
+						<textarea style="border-radius:6px" class="form-control" rows="6" required="required" name="info" id="info" placeholder="Redacte el correo a mandar aqui por favor"  onkeyup="onkeyupInputEmtyy('info')"></textarea>						
 						<div class="valid-feedback">
 								¡ Buen trabajo!
 						</div>
@@ -76,4 +133,23 @@
 	<script src="js/personalizados/utils/onkeyupInputEmpty.js"></script>
     <script src="js/personalizados/utils/buildMsjValidOrInvalid.js"></script>    
     <script src="js/personalizados/utils/onkeyupNoSelectInSlc.js"></script>
+	<script src="js/personalizados/utils/hideshow.js"></script>
+
+	<script type="text/javascript">
+        function MostraIma(input) {
+            if (input.files && input.files[0]) {
+                var image = new FileReader();
+                console.log(image);
+                image.onload = function (e) {
+                    console.log(e)
+                    document.getElementById("image").setAttribute("src", e.target.result);
+                    console.log(e.target.result)
+                    document.getElementById("msjImagenCargadaAutomatica").innerHTML = ""
+                }
+                image.readAsDataURL(input.files[0]);
+
+            }
+            onkeyupInputEmtyy('formFile')
+        }
+    </script>
 </asp:content> 

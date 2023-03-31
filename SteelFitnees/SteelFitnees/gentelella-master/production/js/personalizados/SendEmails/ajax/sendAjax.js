@@ -20,7 +20,7 @@ function sendAjax(formData) {
                 console.log(resultado)
                 if (resultado.data.type == "send") {
                     Swal.fire('Correo enviado a los contactos registrados')
-
+                    document.getElementById("msjImagenCargadaAutomatica").innerHTML=""
                 }
             }
             else {

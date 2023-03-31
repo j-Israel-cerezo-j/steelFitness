@@ -81,7 +81,7 @@ namespace SteelFitnees.gentelella_master.production
             try
             {
                 string stridBranche = Request.QueryString["id"];
-                getProductsByIdBranche = brancheSerevice.getProductsById(stridBranche);
+                getProductsByIdBranche = brancheSerevice.getProductsByIdBranche(stridBranche);
             }
             catch (ServiceException se)
             {

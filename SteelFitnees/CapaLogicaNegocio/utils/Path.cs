@@ -8,6 +8,6 @@ namespace CapaLogicaNegocio.utils
 {
     public  class Path
     {
-        public static string Image = @"C:/Users/jisra/Downloads/steelFitnes-master/steelFitnes-master/steelFitness/SteelFitnees/SteelFitnees/gentelella-master/production/images/perzonalizadas/";
+        public static string Image = @"C:/Users/synoc/OneDrive/Documentos/Israel/steelFitness/steelFitness/SteelFitnees/SteelFitnees/gentelella-master/production/images/perzonalizadas/";
     }
 }

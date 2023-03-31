@@ -218,6 +218,10 @@
     <Content Include="gentelella-master\production\js\personalizados\hours\requestDays.js" />
     <Content Include="gentelella-master\production\js\personalizados\Index\build\buildCardsBranches.js" />
     <Content Include="gentelella-master\production\js\personalizados\Index\requestBranches.js" />
+    <Content Include="gentelella-master\production\js\personalizados\productByBranches\build\buildCardsProducts.js" />
+    <Content Include="gentelella-master\production\js\personalizados\productByBranches\build\slc\buildBranchesSlc.js" />
+    <Content Include="gentelella-master\production\js\personalizados\productByBranches\requestBranches.js" />
+    <Content Include="gentelella-master\production\js\personalizados\productByBranches\requestProductByBranche.js" />
     <Content Include="gentelella-master\production\js\personalizados\Productos\add.js" />
     <Content Include="gentelella-master\production\js\personalizados\Productos\buildTable.js" />
     <Content Include="gentelella-master\production\js\personalizados\Productos\delete.js" />
@@ -235,6 +239,7 @@
     <Content Include="gentelella-master\production\manageEmails.aspx" />
     <Content Include="gentelella-master\production\manageProducts.aspx" />
     <Content Include="gentelella-master\production\principal.Master" />
+    <Content Include="gentelella-master\production\productsByBranche.aspx" />
     <Content Include="gentelella-master\production\showBranchesDetails.aspx" />
     <Content Include="gentelella-master\production\templates\fitnessclub-master\assets\css\animate.min.css" />
     <Content Include="gentelella-master\production\templates\fitnessclub-master\assets\css\animated-headline.css" />
@@ -5907,6 +5912,13 @@
     </Compile>
     <Compile Include="gentelella-master\production\principal.Master.designer.cs">
       <DependentUpon>principal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="gentelella-master\production\productsByBranche.aspx.cs">
+      <DependentUpon>productsByBranche.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gentelella-master\production\productsByBranche.aspx.designer.cs">
+      <DependentUpon>productsByBranche.aspx</DependentUpon>
     </Compile>
     <Compile Include="gentelella-master\production\showBranchesDetails.aspx.cs">
       <DependentUpon>showBranchesDetails.aspx</DependentUpon>

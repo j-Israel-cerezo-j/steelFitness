@@ -23,12 +23,13 @@ namespace SteelFitnees.gentelella_master.production.Handlers
             var data = new Dictionary<string, Object>();
             Response response = new Response();
             string[] submit = Request.Form.AllKeys;
+            var file = Request.Files["image"];
             var valuesRequest = getValuesForm(submit);
             if (submit.Length > 0)
             {
                 try
                 {
-                    var success = sendService.send(valuesRequest);
+                    var success = sendService.send(valuesRequest, file);
                     if (success)
                     {
                         response.success = success;

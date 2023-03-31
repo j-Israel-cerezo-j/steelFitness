@@ -17,7 +17,6 @@ function catalogosAddUpdateDelete(typeR, formData) {
         success: function (resultado) {
             swal.close()
             if (resultado.success) {
-                console.log(resultado)
                 if (resultado.data.type == "add") {
                     Swal.fire({
                         icon: 'success',

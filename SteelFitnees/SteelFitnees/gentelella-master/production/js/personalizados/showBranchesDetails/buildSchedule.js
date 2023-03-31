@@ -32,6 +32,8 @@
     if (ban) {
         document.getElementById("nav-tab").innerHTML = htmlDays
         document.getElementById("nav-tabContent").innerHTML = htmlHours
-        
+
+    } else {
+        document.getElementById("nav-tab").innerHTML = `<h1>Sin horarios por el momento</h1>`
     }
 }

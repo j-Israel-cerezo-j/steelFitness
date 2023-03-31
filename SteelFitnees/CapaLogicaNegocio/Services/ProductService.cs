@@ -27,6 +27,7 @@ namespace CapaLogicaNegocio.Services
         private ProductDelete productDelete = new ProductDelete();
         private ProducData productData = new ProducData();
         private ProductUpdate productUpdate = new ProductUpdate();
+        private ProductTable productTable = new ProductTable();
         private Random rd = new Random();
         public bool add(Dictionary<string, string> request, List<HttpPostedFile> filesList)
         {
@@ -94,6 +95,14 @@ namespace CapaLogicaNegocio.Services
         public string jsonProducts()
         {
             return Converter.ToJson(productList.listProduct()).ToString();
+        }
+        public string jsonProductsByIdBranche(string strId)
+        {
+            if (strId == "")
+            {
+                throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
+            }
+            return Converter.ToJson(productTable.tableByIdBranche(Convert.ToInt32(strId))).ToString();
         }
         public bool deleteProducts(string strIds)
         {

@@ -12,12 +12,16 @@ using CapaLogicaNegocio.Inserts;
 using CapaLogicaNegocio.utils;
 using Validaciones.utils;
 using CapaLogicaNegocio.Lists;
+using System.Net.Mime;
+using System.IO;
+using System.Web;
+
 namespace CapaLogicaNegocio.Services
 {
     public  class EmailSendService
     {
         private ContactList contactList = new ContactList();
-        public bool send(Dictionary<string, string> request)
+        public bool send(Dictionary<string, string> request, HttpPostedFile file)
         {
 
             bool ban = false;
@@ -28,6 +32,24 @@ namespace CapaLogicaNegocio.Services
                 {
                     string affair = RetrieveAtributes.values(request, "asunto");
                     string bodyEmail = RetrieveAtributes.values(request, "info");
+                    string senderMail = RetrieveAtributes.values(request, "senderMail");
+                    string senderPassword = RetrieveAtributes.values(request, "senderPassword");
+                    string smpEmailSend = "";
+                    int portSmp = 0;
+                    if (senderMail.Contains("outlook")|| senderMail.Contains("hotmail"))
+                    {
+                        smpEmailSend = "smtp-mail.outlook.com";
+                        portSmp = 587;
+                    }
+                    else if (senderMail.Contains("gmail"))
+                    {
+                        smpEmailSend = "smtp.gmail.com";
+                        portSmp = 25;
+                    }
+                    if (smpEmailSend == "")
+                    {
+                        throw new ServiceException(MessageErrors.MessageErrors.invalidSmpEmail);
+                    }
                     // Direcciones de correo electrónico de los destinatarios
                     var contacts = contactList.contacts();
                     if (contacts.Count == 0)
@@ -42,16 +64,30 @@ namespace CapaLogicaNegocio.Services
                     {
                         mensaje.To.Add(contact.email);
                     }
+                    // Obtener el archivo cargado mediante el control HttpPostedFile
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        // Convertir el archivo a un arreglo de bytes
+                        byte[] fileData = null;
+                        using (var binaryReader = new BinaryReader(file.InputStream))
+                        {
+                            fileData = binaryReader.ReadBytes(file.ContentLength);
+                        }
 
+                        // Adjuntar el archivo al mensaje de correo electrónico
+                        MemoryStream stream = new MemoryStream(fileData);
+                        Attachment attachment = new Attachment(stream, file.FileName);
+                        mensaje.Attachments.Add(attachment);
+                    }
                     // Configurar los demás campos del mensaje (asunto, cuerpo, etc.)
-                    mensaje.From = new MailAddress("correo remitente");
+                    mensaje.From = new MailAddress(senderMail);
                     mensaje.Subject = affair;
                     mensaje.Body = bodyEmail;
 
                     // Crear un objeto SmtpClient para enviar el correo
-                    SmtpClient cliente = new SmtpClient("smtp-mail.outlook.com");
-                    cliente.Port = 587; // Puerto del servidor SMTP
-                    cliente.Credentials = new NetworkCredential("correo remitente", "contraseña");
+                    SmtpClient cliente = new SmtpClient(smpEmailSend);
+                    cliente.Port = portSmp; // Puerto del servidor SMTP
+                    cliente.Credentials = new NetworkCredential(senderMail, senderPassword);
                     cliente.EnableSsl = true; // Usar SSL para conexión segura
 
                     // Enviar el mensaje

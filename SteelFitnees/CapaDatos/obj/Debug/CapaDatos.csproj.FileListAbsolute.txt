@@ -42,3 +42,14 @@ C:\Users\jisra\Downloads\steelFitnes-master\steelFitnes-master\steelFitness\Stee
 C:\Users\jisra\Downloads\steelFitnes-master\steelFitnes-master\steelFitness\SteelFitnees\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
 C:\Users\jisra\Downloads\steelFitnes-master\steelFitnes-master\steelFitness\SteelFitnees\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\jisra\Downloads\steelFitnes-master\steelFitnes-master\steelFitness\SteelFitnees\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\synoc\OneDrive\Documentos\Israel\steelFitness\steelFitness\SteelFitnees\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\synoc\OneDrive\Documentos\Israel\steelFitness\steelFitness\SteelFitnees\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\synoc\OneDrive\Documentos\Israel\steelFitness\steelFitness\SteelFitnees\CapaDatos\bin\Debug\CapaEntidades.dll
+C:\Users\synoc\OneDrive\Documentos\Israel\steelFitness\steelFitness\SteelFitnees\CapaDatos\bin\Debug\Validaciones.dll
+C:\Users\synoc\OneDrive\Documentos\Israel\steelFitness\steelFitness\SteelFitnees\CapaDatos\bin\Debug\CapaEntidades.pdb
+C:\Users\synoc\OneDrive\Documentos\Israel\steelFitness\steelFitness\SteelFitnees\CapaDatos\bin\Debug\Validaciones.pdb
+C:\Users\synoc\OneDrive\Documentos\Israel\steelFitness\steelFitness\SteelFitnees\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\synoc\OneDrive\Documentos\Israel\steelFitness\steelFitness\SteelFitnees\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\synoc\OneDrive\Documentos\Israel\steelFitness\steelFitness\SteelFitnees\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\synoc\OneDrive\Documentos\Israel\steelFitness\steelFitness\SteelFitnees\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\synoc\OneDrive\Documentos\Israel\steelFitness\steelFitness\SteelFitnees\CapaDatos\obj\Debug\CapaDatos.pdb

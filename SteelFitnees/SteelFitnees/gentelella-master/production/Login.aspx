@@ -116,7 +116,7 @@
                                 </div>--%>
                                 <div>
                                 <div  class="text-center text-lg-start mt-4 pt-2" style=" text-align:center">
-                                    <asp:Button CssClass="btn btnSuccesssRegistro reflejo btn-lg btnLogin" ID="LoginButton" runat="server" CommandName="Login" Text="Iniciar sesión" ValidationGroup="ctl00$Login1"/>
+                                    <asp:Button CssClass="btn btnLoginBlack reflejo btn-lg btnLogin" ID="LoginButton" runat="server" CommandName="Login" Text="Iniciar sesión" ValidationGroup="ctl00$Login1"/>
                                     <p class="small fw-bold mt-2 pt-1 mb-0">Versión
                                         <%--<a  href="preRegisterStudent.aspx" class="link-danger">Registrate</a>--%>
                                     </p>
@@ -137,7 +137,7 @@
         </div>
         <div class="row" style="width: 100%;position:fixed">
             <div
-              class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5" style="background-color: #0b9624;">
+              class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5" style="background-color: #212529;">
                 <!-- Copyright -->
                 <div class="text-white mb-3 mb-md-0">
                   Copyright © 2023. Todos los derechos reservados.

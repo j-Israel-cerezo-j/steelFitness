@@ -12,6 +12,7 @@ namespace CapaLogicaNegocio.MessageErrors
         public static string errorDeletingBranch = "Error deleting branch";
         public static string errorDeletingImage = "Error al eliminar la imagen";
         public static string empetyContacts = "Sin contactos registrados aún.";
+        public static string invalidSmpEmail = "Correo no valio, el correo tiene que ser Gmail u Outlook";
         public static string errorDeletingProduct = "Error al eliminar el producto";
         public static string idRecordEmpty = "Id de registro vacio";
         public static string errorAddingToBranch = "Error al agregar la sucursal";

@@ -17,7 +17,14 @@ namespace SteelFitnees.gentelella_master.production.Handlers
         public string getJsonResponse { get; private set; } = "{\"k\":1}";
         protected void Page_Load(object sender, EventArgs e)
         {
-            getProductsAll();
+            if (Request.QueryString["action"]== "getby")
+            {
+                getProductsByIdBranche();
+            }
+            else
+            {
+                getProductsAll();
+            }            
         }
         private void getProductsAll()
         {
@@ -27,6 +34,26 @@ namespace SteelFitnees.gentelella_master.production.Handlers
             {
                 response.success = true;
                 string json = productService.jsonProducts();
+                data.Add("recoverData", JsonConvert.DeserializeObject<Dictionary<string, Object>[]>(json));
+
+            }
+            catch (ServiceException se)
+            {
+                response.error = se.getMessage();
+            }
+            data.Add("footeer", "Verificar por favor");
+            response.data = data;
+            getJsonResponse = JsonConvert.SerializeObject(response);
+        }
+        private void getProductsByIdBranche()
+        {
+            string strId = Request.QueryString["id"];
+            var data = new Dictionary<string, Object>();
+            Response response = new Response();
+            try
+            {
+                response.success = true;
+                string json = productService.jsonProductsByIdBranche(strId);
                 data.Add("recoverData", JsonConvert.DeserializeObject<Dictionary<string, Object>[]>(json));
 
             }

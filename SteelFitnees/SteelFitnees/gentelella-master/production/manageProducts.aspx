@@ -32,7 +32,7 @@
 								¡ Buen trabajo!
 							</div>
 							<div class="invalid-feedback">
-								La fotografia del trabajador es requerida
+								La imagen del producto es requerida
 							</div>
 						</div>
 					</div>					

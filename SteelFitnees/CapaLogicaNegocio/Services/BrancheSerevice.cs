@@ -140,7 +140,7 @@ namespace CapaLogicaNegocio.Services
         }
         public string jsonTableBranches()
         {
-            return Converter.ToJson(branchesTable.table()).ToString();
+            return Converter.ToJson(branchesTable.table(), "idSucursal").ToString();
         }
         public bool deleteBranche(string strIds)
         {
@@ -204,7 +204,7 @@ namespace CapaLogicaNegocio.Services
             var namesTypeDateTime=new List<string>() { "horaInicio", "horaCierre" };
             return Converter.ToJson(schedulesTable.tableSchedulesByIdBranche(Convert.ToInt32(strId)),true, namesTypeDateTime).ToString();
         }
-        public string getProductsById(string strId)
+        public string getProductsByIdBranche(string strId)
         {
             if (strId == "")
             {

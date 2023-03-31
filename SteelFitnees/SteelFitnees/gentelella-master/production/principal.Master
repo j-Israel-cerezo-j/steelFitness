@@ -36,7 +36,7 @@
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="index.aspx">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#services">SOBRE NOSOTROS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">PRODUCTOS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="productsByBranche.aspx">PRODUCTOS</a></li>
                         <li class="nav-item"><a class="nav-link" href="Galeria.aspx">GALERIA</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">SUCURSALES</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">CONTACTO</a></li>
@@ -75,5 +75,6 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js" integrity="sha256-92U7H+uBjYAJfmb+iNPi7DPoj795ZCTY4ZYmplsn/fQ=" crossorigin="anonymous"></script>
 </body>
 </html>
