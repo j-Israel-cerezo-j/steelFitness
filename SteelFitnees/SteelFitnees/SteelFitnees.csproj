@@ -177,6 +177,7 @@
     <Content Include="gentelella-master\production\Handlers\contactController.aspx" />
     <Content Include="gentelella-master\production\Handlers\daysController.aspx" />
     <Content Include="gentelella-master\production\Handlers\emailController.aspx" />
+    <Content Include="gentelella-master\production\Handlers\filterByController.aspx" />
     <Content Include="gentelella-master\production\Handlers\hoursController.aspx" />
     <Content Include="gentelella-master\production\Handlers\imagesController.aspx" />
     <Content Include="gentelella-master\production\Handlers\productsController.aspx" />
@@ -200,12 +201,15 @@
     <Content Include="gentelella-master\production\js\personalizados\Branches\buildTable.js" />
     <Content Include="gentelella-master\production\js\personalizados\Branches\delete.js" />
     <Content Include="gentelella-master\production\js\personalizados\Branches\recoverData.js" />
+    <Content Include="gentelella-master\production\js\personalizados\Branches\reset.js" />
     <Content Include="gentelella-master\production\js\personalizados\Branches\tableOnload.js" />
     <Content Include="gentelella-master\production\js\personalizados\Branches\update.js" />
     <Content Include="gentelella-master\production\js\personalizados\contactForm\add.js" />
     <Content Include="gentelella-master\production\js\personalizados\contactForm\ajax\enviiat.js" />
     <Content Include="gentelella-master\production\js\personalizados\Dayass\Add.js" />
     <Content Include="gentelella-master\production\js\personalizados\Dayass\TableOnload.js" />
+    <Content Include="gentelella-master\production\js\personalizados\hours\requestBuildTableFilterBy.js" />
+    <Content Include="gentelella-master\production\js\personalizados\hours\build\slc\buildFilterBySlc.js" />
     <Content Include="gentelella-master\production\js\personalizados\hours\build\slc\buildBranchesSlc.js" />
     <Content Include="gentelella-master\production\js\personalizados\hours\buildTableOnload.js" />
     <Content Include="gentelella-master\production\js\personalizados\Dayass\buildTableDays.js" />
@@ -215,6 +219,7 @@
     <Content Include="gentelella-master\production\js\personalizados\Dayass\update.js" />
     <Content Include="gentelella-master\production\js\personalizados\hours\build\slc\buildDaysSlc.js" />
     <Content Include="gentelella-master\production\js\personalizados\hours\requestBranches.js" />
+    <Content Include="gentelella-master\production\js\personalizados\hours\requestBuildFilter.js" />
     <Content Include="gentelella-master\production\js\personalizados\hours\requestDays.js" />
     <Content Include="gentelella-master\production\js\personalizados\Index\build\buildCardsBranches.js" />
     <Content Include="gentelella-master\production\js\personalizados\Index\requestBranches.js" />
@@ -5814,6 +5819,13 @@
     </Compile>
     <Compile Include="gentelella-master\production\Handlers\emailController.aspx.designer.cs">
       <DependentUpon>emailController.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gentelella-master\production\Handlers\filterByController.aspx.cs">
+      <DependentUpon>filterByController.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gentelella-master\production\Handlers\filterByController.aspx.designer.cs">
+      <DependentUpon>filterByController.aspx</DependentUpon>
     </Compile>
     <Compile Include="gentelella-master\production\Handlers\hoursController.aspx.cs">
       <DependentUpon>hoursController.aspx</DependentUpon>

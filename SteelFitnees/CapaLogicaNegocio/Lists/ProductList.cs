@@ -10,10 +10,14 @@ namespace CapaLogicaNegocio.Lists
     public class ProductList
     {
         ProductData productData = new ProductData();
+        ProductBrancheData productBrancheData = new ProductBrancheData();
 
         public List<Product> listProduct()
         {
             return productData.listProduct();
+        }
+        public List<ProductBranch> listProductBranches() {
+            return productBrancheData.listProductBranches();
         }
     }
 }

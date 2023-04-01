@@ -88,10 +88,27 @@
 				</div>
 				<input type="hidden" id="catalogo"  name="catalogo" value="horas" />
 			</form>					
-		</div>
+		</div>		
 		<%-- Tabla Inicio--%>
-		<div class="clearfix"></div>
-		<div class="mt-4" id="containerTableHours"></div>
+		<div class="clearfix x_title"></div>
+		<h2>Horarios<small></small></h2>
+		<div class="row">
+			<div class="form-group col-lg-3 col-md-6 col-sm-12 ">
+				<label class="control-label">Filtrar por..</label>
+				<select style="border-radius:6px" class="form-control" id="filter"   onchange="requestBuildFilter()">
+					<option selected value="">Seleccione una</option>
+					<option value="sucursales">Sucursales</option>
+					<option value="dias">Dias</option>
+				</select>				
+			</div>
+			<div class="form-group col-lg-3 col-md-6 col-sm-12 ">
+				<label id="filterByLbl" class="control-label">Filtrar por...</label>
+				<select style="border-radius:6px" class="form-control" id="filterTableBy" onchange="requestBuildTableFilterBy()">
+					 <option selected value="">Seleccione una</option>
+				</select>				
+			</div>
+		</div>		
+		<div id="containerTableHours"></div>
 		<%-- Tabla Final--%>
 	</div>			
     <script src="js/personalizados/hours/add.js"></script>    
@@ -104,8 +121,9 @@
     <script src="js/personalizados/hours/build/tables/buildTableHours.js"></script>
     <script src="js/personalizados/hours/build/slc/buildBranchesSlc.js"></script>
     <script src="js/personalizados/hours/build/slc/buildDaysSlc.js"></script>
-
-
+    <script src="js/personalizados/hours/build/slc/buildFilterBySlc.js"></script>
+    <script src="js/personalizados/hours/requestBuildFilter.js"></script>
+    <script src="js/personalizados/hours/requestBuildTableFilterBy.js"></script>
 	<script src="js/personalizados/FacadeCatalogosRecoverData/switchCatalogosRecoverData.js"></script>
 
     <script src="js/personalizados/Ajax/recoverData.js"></script>

@@ -130,5 +130,15 @@ namespace CapaLogicaNegocio.Services
             hour.fkSucursal = Convert.ToInt32(strSelectFkBranche);
             return hour;
         }
+
+        public string jsonTableSchedulesByIdDay(string strId)
+        {
+            if (strId == "")
+            {
+                throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
+            }
+            var namesTypeDateTime = new List<string>() { "horaInicio", "horaCierre" };
+            return Converter.ToJson(schedulesTable.tableSchedulesByIdDay(Convert.ToInt32(strId)), true, namesTypeDateTime).ToString();
+        }
     }
 }

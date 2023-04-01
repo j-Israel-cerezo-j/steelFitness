@@ -8,6 +8,8 @@ namespace CapaLogicaNegocio.MessageErrors
 {
     public class MessageErrors
     {
+        public static string errorDeleteBrancheReference = "No puedes eliminar la sucursal por que tiene productos asignados";
+        public static string errorDeleteDayReference = "No puedes eliminar el dia ya que esta asginado a un horario";
         public static string failedToUpdate = "Error al actualizar";
         public static string errorDeletingBranch = "Error deleting branch";
         public static string errorDeletingImage = "Error al eliminar la imagen";
@@ -22,6 +24,7 @@ namespace CapaLogicaNegocio.MessageErrors
         public static string formantIncorrectTime = "El formato tipo hora, es incorrecto";
         public static string formantIncorrectNumber = "El formato númerico es incorrecto";
         public static string noneTable = "Tabla no encontrada";
+        public static string noneFilter = "Filtro no encontrado";
         public static string nonexistentField(string field = "")
         {
             return "El campo " + field + " no exite";

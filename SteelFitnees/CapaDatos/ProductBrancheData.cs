@@ -57,6 +57,36 @@ namespace CapaDatos
             }
             return ban;
         }
+        public List<ProductBranch> listProductBranches()
+        {
+            List<ProductBranch> productsBranches = new List<ProductBranch>();
+            try
+            {
+                SqlDataReader renglon;
+                Conexion.Open();
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "pro_listProductsBranches";
+                renglon = Comando.ExecuteReader();
+                while (renglon.Read())
+                {
+                    productsBranches.Add(new ProductBranch(renglon));
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+                Comando.Parameters.Clear();
+
+            }
+            return productsBranches;
+        }
         public DataTable tableProductBranches()
         {
             DataTable schedules = new DataTable();

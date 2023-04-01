@@ -24,11 +24,11 @@ namespace SteelFitnees.gentelella_master.production.Handlers
             Response response = new Response();
             var id = Request.QueryString["id"];
             try
-            {
-                response.success = true;
+            {                
                 string json = bracheService.jsonImagesByIdBranche(id);
                 data.Add("info", id);
                 data.Add("recoverData", JsonConvert.DeserializeObject<Dictionary<string, Object>[]>(json));
+                response.success = true;
 
             }
             catch (ServiceException se)

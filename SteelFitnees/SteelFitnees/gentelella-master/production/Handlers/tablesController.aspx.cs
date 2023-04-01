@@ -24,13 +24,14 @@ namespace SteelFitnees.gentelella_master.production.Handlers
             Response response = new Response();
             var catalog = Request.QueryString["catalogo"];
             try
-            {
-                response.success = true;
+            {                
                 string table = facadeCrudCatalogs.tableCatalogs(catalog);
                 data.Add("info", catalog);
-                data.Add("recoverTable", JsonConvert.DeserializeObject<Dictionary<string, Object>[]>(table));                
+                data.Add("recoverTable", JsonConvert.DeserializeObject<Dictionary<string, Object>[]>(table));
+                response.success = true;
 
-            }catch(ServiceException se)
+            }
+            catch(ServiceException se)
             {
                 response.error = se.getMessage();
             }

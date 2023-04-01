@@ -34,6 +34,7 @@ namespace CapaLogicaNegocio.Services
         private BranchesTable branchesTable=new BranchesTable();
         private SchedulesTable schedulesTable = new SchedulesTable();   
         private ProductTable productTable=new ProductTable();
+        private ProductList productList = new ProductList();
         public bool add(Dictionary<string, string> request, List<HttpPostedFile> filesList)
         {            
             bool ban = false;
@@ -61,6 +62,7 @@ namespace CapaLogicaNegocio.Services
                 }
                 catch(ServiceException se)
                 {
+                    rollBackBranche(idBranceAdd.ToString());
                     throw new ServiceException(se.getMessage());
                 }
                 catch (Exception ex)
@@ -80,6 +82,10 @@ namespace CapaLogicaNegocio.Services
                 }
             }
             return ban;
+        }
+        private void rollBackBranche(string strId)
+        {
+            brancheDelete.delete(strId);
         }
         public bool update(Dictionary<string, string> request,string strId, List<HttpPostedFile> filesList)
         {
@@ -145,8 +151,8 @@ namespace CapaLogicaNegocio.Services
         public bool deleteBranche(string strIds)
         {
             try
-            {                
-                var idsList = Converter.ToList(strIds);
+            {
+                var idsList = Converter.ToList(strIds);                     
                 foreach (var idItem in idsList)
                 {
                     var lisImages=imageList.listImagesByIdBranche(Convert.ToInt32(idItem));
@@ -157,6 +163,10 @@ namespace CapaLogicaNegocio.Services
                 }
                 delete.whereIn("images", "fkSucursal", strIds);
                 return brancheDelete.delete(strIds);
+            }
+            catch (ServiceException se)
+            {
+                throw new ServiceException(se.getMessage());
             }
             catch (Exception e)
             {

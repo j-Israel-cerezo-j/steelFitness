@@ -100,6 +100,10 @@ namespace SteelFitnessWEB.gentelella_master.production.Handlers
                         response.error = "No se ha podido eliminar.";
                     }
                 }
+                catch (ServiceException se)
+                {
+                    response.error = se.getMessage();
+                }
                 catch (Exception e)
                 {
                     response.error = "¡Error inesperado en el servidor!";

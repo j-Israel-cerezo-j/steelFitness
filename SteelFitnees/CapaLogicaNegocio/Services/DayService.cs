@@ -23,6 +23,7 @@ namespace CapaLogicaNegocio.Services
         private DayDelete dayDelete = new DayDelete();
         private DayData dayData = new DayData();
         private DayUpdate dayUpdate = new DayUpdate();
+        private HoursList hoursList = new HoursList();
         public bool add(Dictionary<string, string> request)
         {
             bool ban = false;
@@ -74,6 +75,15 @@ namespace CapaLogicaNegocio.Services
         }
         public bool deleteDays(string strIds)
         {
+            var idsList = Converter.ToList(strIds);
+            var schedules = hoursList.listHours();
+            for (int i = 0; i < schedules.Count; i++)
+            {
+                if (idsList.Contains(schedules[i].fkDia.ToString()))
+                {
+                    throw new ServiceException(MessageErrors.MessageErrors.errorDeleteDayReference);
+                }
+            }
             return dayDelete.delete(strIds);
         }
         public string jsonRecoverData(string strId)

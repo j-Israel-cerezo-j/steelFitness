@@ -31,10 +31,10 @@ namespace SteelFitnees.gentelella_master.production.Handlers
             var data = new Dictionary<string, Object>();
             Response response = new Response();
             try
-            {
-                response.success = true;
+            {                
                 string json = productService.jsonProducts();
                 data.Add("recoverData", JsonConvert.DeserializeObject<Dictionary<string, Object>[]>(json));
+                response.success = true;
 
             }
             catch (ServiceException se)

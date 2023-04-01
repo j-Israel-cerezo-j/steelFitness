@@ -18,5 +18,9 @@ namespace CapaLogicaNegocio.Tables
         {
             return datosHour.horariosByIdBranche(id);
         }
+        public DataTable tableSchedulesByIdDay(int id)
+        {
+            return datosHour.horariosByIdDay(id);
+        }
     }
 }
