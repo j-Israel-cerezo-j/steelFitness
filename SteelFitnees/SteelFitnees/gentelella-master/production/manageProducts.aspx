@@ -86,7 +86,7 @@
 						</button>
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-9">
-						<button style="padding:10px" class="btn btn-secondary reflejo" type="reset">
+						<button style="padding:10px" class="btn btn-secondary reflejo" type="button" onclick="btnReset()">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
 							  <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
 							  <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
@@ -128,7 +128,7 @@
     <script src="js/personalizados/Productos/delete.js"></script>
     <script src="js/personalizados/Productos/recoverData.js"></script>
     <script src="js/personalizados/Productos/update.js"></script>
-
+    <script src="js/personalizados/Productos/resertBtn.js"></script>
     <script src="js/personalizados/typeClassrooms/OnkeyupSearch.js"></script>        
 
 	<script src="js/personalizados/FacadeCatalogosRecoverData/switchCatalogosRecoverData.js"></script>
@@ -158,12 +158,9 @@
 		}
         function MostraIma(input) {
             if (input.files && input.files[0]) {
-                var image = new FileReader();
-                console.log(image);
+                var image = new FileReader();                
                 image.onload = function (e) {
-                    console.log(e)
                     document.getElementById("image").setAttribute("src", e.target.result);
-                    console.log(e.target.result)
                     document.getElementById("msjImagenCargadaAutomatica").innerHTML = ""
                 }
                 image.readAsDataURL(input.files[0]);

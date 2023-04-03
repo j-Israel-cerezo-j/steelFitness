@@ -28,7 +28,7 @@
                             <th class="column-title" style="display: table-cell;">Ubicación</th>
                             <th class="column-title" style="display: table-cell;">Día</th>
                             <th class="column-title" style="display: table-cell;">Hora de apertura</th>
-                            <th class="column-title" style="display: table-cell;">Hora de término</th>
+                            <th class="column-title" style="display: table-cell;">Hora de cierre</th>
                             <th class="column-title no-link last" style="display: table-cell;"><span class="nobr">Editar</span>
                             </th>
                             <th class="bulk-actions" colspan="7" style="display: none;">

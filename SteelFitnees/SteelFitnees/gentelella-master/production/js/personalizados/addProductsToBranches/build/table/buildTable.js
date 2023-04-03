@@ -3,8 +3,7 @@
     var ban = false;
     var cont = 1;
     var html = `           
-                  <div class="x_title">
-                    <h2>Productos en sucursales<small></small></h2>
+                  <div >
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>                      

@@ -13,6 +13,7 @@ namespace CapaLogicaNegocio
         private BrancheSerevice brancheSerevice = new BrancheSerevice();
         private DayService dayService = new DayService();
         private HoursService hoursService = new HoursService();
+        private ProductService productService= new ProductService();
         public string by(string filterBy)
         {
             if (filterBy == "")
@@ -25,6 +26,8 @@ namespace CapaLogicaNegocio
                     return brancheSerevice.jsonBranches();
                 case "dias":
                     return dayService.jsonDays();
+                case "productos":
+                    return productService.jsonProducts();
                 default:
                     throw new ServiceException(MessageErrors.MessageErrors.noneFilter);
             }            

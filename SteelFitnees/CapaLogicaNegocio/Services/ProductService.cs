@@ -109,12 +109,24 @@ namespace CapaLogicaNegocio.Services
             try
             {
                 var idsList = Converter.ToList(strIds);
+                var productsSchedules = productList.listProductBranches();
+                for (int i = 0; i < productsSchedules.Count; i++)
+                {
+                    if (idsList.Contains(productsSchedules[i].fkProducto.ToString()))
+                    {
+                        throw new ServiceException(MessageErrors.MessageErrors.errorDeletePorductReference);
+                    }
+                }
                 foreach (var item in idsList)
                 {
                     string fileName = (string)Select.findFieldWhere("fileName", "Productos", "idProducto", item.ToString());
                     Images.Delete("products", fileName);
                 }
                 return productDelete.delete(strIds);
+            }
+            catch (ServiceException se)
+            {
+                throw new ServiceException(se.getMessage());
             }
             catch (Exception e)
             {

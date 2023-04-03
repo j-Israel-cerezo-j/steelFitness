@@ -108,5 +108,9 @@
     <Compile Include="utils\Path.cs" />
     <Compile Include="utils\RetrieveAtributes.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="templatesGymHtml\gymHtml.txt" />
+    <Content Include="templatesGymHtml\gymMessageHtml.html" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

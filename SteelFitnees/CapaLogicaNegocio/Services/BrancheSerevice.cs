@@ -146,7 +146,7 @@ namespace CapaLogicaNegocio.Services
         }
         public string jsonTableBranches()
         {
-            return Converter.ToJson(branchesTable.table(), "idSucursal").ToString();
+            return Converter.ToJson(branchesTable.table(),"idSucursal").ToString();
         }
         public bool deleteBranche(string strIds)
         {

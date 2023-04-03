@@ -10,6 +10,7 @@ namespace CapaLogicaNegocio.MessageErrors
     {
         public static string errorDeleteBrancheReference = "No puedes eliminar la sucursal por que tiene productos asignados";
         public static string errorDeleteDayReference = "No puedes eliminar el dia ya que esta asginado a un horario";
+        public static string errorDeletePorductReference = "No puedes eliminar el producto ya que esta asginado a una sucursal";
         public static string failedToUpdate = "Error al actualizar";
         public static string errorDeletingBranch = "Error deleting branch";
         public static string errorDeletingImage = "Error al eliminar la imagen";

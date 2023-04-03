@@ -34,6 +34,7 @@ namespace CapaLogicaNegocio.Services
                     string bodyEmail = RetrieveAtributes.values(request, "info");
                     string senderMail = RetrieveAtributes.values(request, "senderMail");
                     string senderPassword = RetrieveAtributes.values(request, "senderPassword");
+                    string contenidoHtml = File.ReadAllText("C:/Users/synoc/OneDrive/Documentos/Israel/steelFitness/SteelFitnees/CapaLogicaNegocio/templatesGymHtml/gymMessageHtml.html");
                     string smpEmailSend = "";
                     int portSmp = 0;
                     if (senderMail.Contains("outlook")|| senderMail.Contains("hotmail"))
@@ -82,7 +83,8 @@ namespace CapaLogicaNegocio.Services
                     // Configurar los demás campos del mensaje (asunto, cuerpo, etc.)
                     mensaje.From = new MailAddress(senderMail);
                     mensaje.Subject = affair;
-                    mensaje.Body = bodyEmail;
+                    mensaje.Body = contenidoHtml+" "+ bodyEmail;
+                    mensaje.IsBodyHtml = true; // Indicar que el cuerpo del mensaje es HTML
 
                     // Crear un objeto SmtpClient para enviar el correo
                     SmtpClient cliente = new SmtpClient(smpEmailSend);
