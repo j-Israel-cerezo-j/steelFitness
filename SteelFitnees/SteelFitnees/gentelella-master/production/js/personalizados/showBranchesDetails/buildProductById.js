@@ -1,5 +1,4 @@
-﻿function buildProductById(json) {
-    console.log(json)
+﻿function buildProductById(json) {        
     document.getElementById("containerProducts").innerHTML = ""    
 
     var ban = false;    

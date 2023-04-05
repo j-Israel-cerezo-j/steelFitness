@@ -18,6 +18,8 @@ using CapaLogicaNegocio.Selects;
 using System.Web;
 using System.IO;
 using CapaLogicaNegocio.Inserts;
+using System.Globalization;
+
 namespace CapaLogicaNegocio.Services
 {
     public class BrancheSerevice
@@ -34,7 +36,6 @@ namespace CapaLogicaNegocio.Services
         private BranchesTable branchesTable=new BranchesTable();
         private SchedulesTable schedulesTable = new SchedulesTable();   
         private ProductTable productTable=new ProductTable();
-        private ProductList productList = new ProductList();
         public bool add(Dictionary<string, string> request, List<HttpPostedFile> filesList)
         {            
             bool ban = false;
@@ -204,7 +205,6 @@ namespace CapaLogicaNegocio.Services
         {
             return dayList.listDays();
         }
-
         public string jsontableSchedulesByIdBrancheTable(string strId)
         {
             if (strId == "")
@@ -221,6 +221,58 @@ namespace CapaLogicaNegocio.Services
                 throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
             }
             return Converter.ToJson(productTable.tableByIdBranche(Convert.ToInt32(strId))).ToString();
+        }
+
+        public bool addCommmentsByBranche(Dictionary<string, string> request,string strId)
+        {
+            bool ban = false;
+            var camposEmptysOrNull = Validation.isNullOrEmptys(request);
+            if (camposEmptysOrNull.Count == 0)
+            {
+                if (strId == "")
+                    throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
+                CommentBranch commentBranch = new CommentBranch();
+                commentBranch.comment= RetrieveAtributes.values(request, "comments");
+                commentBranch.commentDate= DateTime.Today;
+                commentBranch.fkBranche=Convert.ToInt32(strId);
+
+                return brancheAdd.addComments(commentBranch);
+            }
+            else
+            {
+                foreach (var item in camposEmptysOrNull)
+                {
+                    if (item.Value)
+                    {
+                        throw new ServiceException(item.Key + " esta vacío");
+                    }
+                }
+            }
+            return ban;
+
+        }
+        public string jsonCommentsBranches(string strId)
+        {
+            if (strId == "")
+            {
+                throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
+            }
+            return Converter.ToJson(brancheList.listCommentsByIdBrache(Convert.ToInt32(strId)));
+        }
+        public string jsonCommentsBranchesByWeeksAndId(string strId,string strWeek)
+        {
+            if (strId == "")
+            {
+                throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
+            }            
+            if (!Validation.FormantDateFullFormant(strWeek))
+            {
+                throw new ServiceException(MessageErrors.MessageErrors.formantIncorrectTime);
+            }            
+            DateTime weekIni=Convert.ToDateTime(strWeek);
+            DateTime weekEnd = weekIni.AddDays(7);
+
+            return Converter.ToJson(brancheList.listCommentsByIdBracheAndWeek(Convert.ToInt32(strId),weekIni,weekEnd));
         }
     }
 }

@@ -14,5 +14,9 @@ namespace CapaLogicaNegocio.Adds
         {
             return brancheData.add(branche);
         }
+        public bool addComments(CommentBranch commentBranch)
+        {
+            return brancheData.addComments(commentBranch);
+        }
     }
 }

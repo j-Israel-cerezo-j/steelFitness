@@ -30,65 +30,29 @@ namespace CapaLogicaNegocio.Services
             {
                 try
                 {
+                    MailMessage mensaje = new MailMessage();
                     string affair = RetrieveAtributes.values(request, "asunto");
                     string bodyEmail = RetrieveAtributes.values(request, "info");
                     string senderMail = RetrieveAtributes.values(request, "senderMail");
                     string senderPassword = RetrieveAtributes.values(request, "senderPassword");
-                    string contenidoHtml = File.ReadAllText("C:/Users/synoc/OneDrive/Documentos/Israel/steelFitness/SteelFitnees/CapaLogicaNegocio/templatesGymHtml/gymMessageHtml.html");
-                    string smpEmailSend = "";
-                    int portSmp = 0;
-                    if (senderMail.Contains("outlook")|| senderMail.Contains("hotmail"))
-                    {
-                        smpEmailSend = "smtp-mail.outlook.com";
-                        portSmp = 587;
-                    }
-                    else if (senderMail.Contains("gmail"))
-                    {
-                        smpEmailSend = "smtp.gmail.com";
-                        portSmp = 25;
-                    }
-                    if (smpEmailSend == "")
-                    {
-                        throw new ServiceException(MessageErrors.MessageErrors.invalidSmpEmail);
-                    }
-                    // Direcciones de correo electrónico de los destinatarios
-                    var contacts = contactList.contacts();
-                    if (contacts.Count == 0)
-                    {
-                        throw new ServiceException(MessageErrors.MessageErrors.empetyContacts);
-                    }
-                    // Crear un objeto MailMessage
-                    MailMessage mensaje = new MailMessage();
+                                        
+                    Attachment adjunto = new Attachment(file.InputStream, file.FileName);
+                    AlternateView htmlView = AlternateView.CreateAlternateViewFromString(Html.htmlTemplateEmail(), null, "text/html");
+                    LinkedResource linkedResource = new LinkedResource(adjunto.ContentStream, adjunto.ContentType);
+                    linkedResource.ContentId = "imagenEnHTML";
+                    htmlView.LinkedResources.Add(linkedResource);                   
+                    mensaje.AlternateViews.Add(htmlView);
+                    string smpEmailSend = selectSmpEmailSend(senderMail);
 
-                    // Agregar los destinatarios al mensaje
-                    foreach (var contact in contacts)
-                    {
-                        mensaje.To.Add(contact.email);
-                    }
-                    // Obtener el archivo cargado mediante el control HttpPostedFile
-                    if (file != null && file.ContentLength > 0)
-                    {
-                        // Convertir el archivo a un arreglo de bytes
-                        byte[] fileData = null;
-                        using (var binaryReader = new BinaryReader(file.InputStream))
-                        {
-                            fileData = binaryReader.ReadBytes(file.ContentLength);
-                        }
-
-                        // Adjuntar el archivo al mensaje de correo electrónico
-                        MemoryStream stream = new MemoryStream(fileData);
-                        Attachment attachment = new Attachment(stream, file.FileName);
-                        mensaje.Attachments.Add(attachment);
-                    }
-                    // Configurar los demás campos del mensaje (asunto, cuerpo, etc.)
+                    mensaje = addMessageRecipients(mensaje);
+                    
                     mensaje.From = new MailAddress(senderMail);
                     mensaje.Subject = affair;
-                    mensaje.Body = contenidoHtml+" "+ bodyEmail;
-                    mensaje.IsBodyHtml = true; // Indicar que el cuerpo del mensaje es HTML
+                    mensaje.Body = bodyEmail;
 
                     // Crear un objeto SmtpClient para enviar el correo
                     SmtpClient cliente = new SmtpClient(smpEmailSend);
-                    cliente.Port = portSmp; // Puerto del servidor SMTP
+                    cliente.Port = 587; // Puerto del servidor SMTP
                     cliente.Credentials = new NetworkCredential(senderMail, senderPassword);
                     cliente.EnableSsl = true; // Usar SSL para conexión segura
 
@@ -116,6 +80,38 @@ namespace CapaLogicaNegocio.Services
                 }
             }
             return ban;
+        }
+        private MailMessage addMessageRecipients(MailMessage mensaje)
+        {            
+            var contacts = contactList.contacts();
+            if (contacts.Count == 0)
+            {
+                throw new ServiceException(MessageErrors.MessageErrors.empetyContacts);
+            }
+
+            // Agregar los destinatarios al mensaje
+            foreach (var contact in contacts)
+            {
+                mensaje.To.Add(contact.email);
+            }
+            return mensaje;
+        }
+        private string selectSmpEmailSend(string senderMail)
+        {
+            string smpEmailSend = "";            
+            if (senderMail.Contains("outlook") || senderMail.Contains("hotmail"))
+            {
+                smpEmailSend = "smtp-mail.outlook.com";                
+            }
+            else if (senderMail.Contains("gmail"))
+            {
+                smpEmailSend = "smtp.gmail.com";
+            }
+            if (smpEmailSend == "")
+            {
+                throw new ServiceException(MessageErrors.MessageErrors.invalidSmpEmail);
+            }
+            return smpEmailSend;
         }
     }
 }

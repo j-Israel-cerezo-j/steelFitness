@@ -118,6 +118,74 @@ namespace CapaDatos
             }
             return branches;
         }
+        public List<CommentBranch> listCommentsByIdBranches(int id)
+        {
+            List<CommentBranch> CommentSBranch = new List<CommentBranch>();
+            try
+            {
+                SqlDataReader renglon;
+                Conexion.Open();
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "pro_listCommentByIdBranche";
+                Comando.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));
+                Comando.Parameters["@id"].Value = id;
+                renglon = Comando.ExecuteReader();
+                while (renglon.Read())
+                {
+                    CommentSBranch.Add(new CommentBranch(renglon));
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+                Comando.Parameters.Clear();
+
+            }
+            return CommentSBranch;
+        }
+        public List<CommentBranch> listCommentsByIdBranchesAndWeek(int id, DateTime weekIni, DateTime weekEnd)
+        {
+            List<CommentBranch> CommentSBranch = new List<CommentBranch>();
+            try
+            {
+                SqlDataReader renglon;
+                Conexion.Open();
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "pro_listCommentByIdBrancheAndWeek";
+                Comando.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));
+                Comando.Parameters["@id"].Value = id;
+                Comando.Parameters.Add(new SqlParameter("@weekIni", SqlDbType.DateTime));
+                Comando.Parameters["@weekIni"].Value = weekIni;
+                Comando.Parameters.Add(new SqlParameter("@weekEnd", SqlDbType.DateTime));
+                Comando.Parameters["@weekEnd"].Value = weekEnd;
+                renglon = Comando.ExecuteReader();
+                while (renglon.Read())
+                {
+                    CommentSBranch.Add(new CommentBranch(renglon));
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+                Comando.Parameters.Clear();
+
+            }
+            return CommentSBranch;
+        }
         public DataTable tableBranches()
         {
             DataTable schedules = new DataTable();
@@ -236,6 +304,40 @@ namespace CapaDatos
                 Comando.Parameters.Clear();
             }
             return branche;
+        }
+        public bool addComments(CommentBranch commentBranch)
+        {
+            bool ban;
+            try
+            {
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "pro_addComenteBranche";
+                Comando.Parameters.Add(new SqlParameter("@idBranche", SqlDbType.Int));
+                Comando.Parameters["@idBranche"].Value = commentBranch.fkBranche;
+                Comando.Parameters.Add(new SqlParameter("@comments", SqlDbType.Text));
+                Comando.Parameters["@comments"].Value = commentBranch.comment;
+                Comando.Parameters.Add(new SqlParameter("@commentDate", SqlDbType.DateTime));
+                Comando.Parameters["@commentDate"].Value = commentBranch.commentDate;
+                Conexion.Open();
+                Comando.ExecuteNonQuery();
+                ban = true;
+            }
+            catch (SqlException e)
+            {
+
+                ban = false;
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+                Comando.Parameters.Clear();
+            }
+            return ban;
+
         }
 
     }

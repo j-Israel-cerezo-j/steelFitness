@@ -37,9 +37,10 @@
                 </div>
             </div>
         </div>
+       <input type="hidden" value="<%=getIdBranche %>" id="idBranche" />
     </section>
     <!-- About-2 Area End -->   
-    <h1 style="text-align:center">Dias y horarios disponibles de la sucursal</h1>
+    <h1 style="text-align:center">Dias y horarios disponibles de la sucursal<p>Da click en el día</p></h1>
     <%--Horarios inicio--%>
     <section class="date-tabs" style="padding-top: 0px;" >        
         <!-- Heading & Nav Button -->
@@ -113,13 +114,25 @@
     <section class="wantToWork-area w-padding section-bg" data-background="templates/fitnessclub-master/assets/img/gallery/section_bg02.png">
         <div class="container">
             <div class="row align-items-center justify-content-between">
-                <div class="col-xl-6 col-lg-7 col-md-8 col-sm-10">
+                <div class="col-xl-4 col-lg-4 col-md-8 col-sm-10">
                     <div class="wantToWork-caption">
                         <h2>Visitanos pronto</h2>
                     </div>
-                </div>
+                </div> 
+                <form id="formComments" class="g-3 needs-validation" novalidate style="width:35%"> 
+                    <div style="width:100%" class="col-xl-4 col-lg-4 col-md-8 col-sm-10">
+                        <label style="color:white" class="form-label">Comentanos tus sugerencias de la sucursal o si fue de tu agarado</label>
+                        <textarea class="form-control" rows="6" id="comments" name="comments" required="required" onkeyup="onkeyupInputEmtyy('comments')"></textarea>
+                        <div class="valid-feedback">
+							¡ Buen trabajo!
+						</div>
+						<div class="invalid-feedback">
+							El comentario es requerido
+						</div>
+                    </div>
+                </form>
                 <div class="col-xl-2 col-lg-2 col-md-3">
-                    <a href="index.aspx" class="btn wantToWork-btn f-right">Regresar</a>
+                    <button class="btn btn-primary" onclick="requestComments()">Enviar</button>
                 </div>
             </div>
         </div>
@@ -132,6 +145,9 @@
     </div>    
     <script src="js/personalizados/showBranchesDetails/buildProductById.js"></script>
     <script src="js/personalizados/showBranchesDetails/buildSchedule.js"></script>
+    <script src="js/personalizados/showBranchesDetails/requestComments.js"></script>
+    <script src="js/personalizados/showBranchesDetails/ajax/branchesAjax.js"></script>
+    <script src="js/personalizados/utils/onkeyupInputEmpty.js"></script>
     <!-- JS here -->
     <script src="templates/fitnessclub-master/assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <!-- Jquery, Popper, Bootstrap -->
@@ -176,7 +192,6 @@
         window.onload = function () {
             var jsonSchedules =<%=getSchedulesByIdBranche%>
             var productsById =<%=getProductsByIdBranche%>
-                console.log(productsById)
             buildSchedule(jsonSchedules);
             buildProductById(productsById);
 

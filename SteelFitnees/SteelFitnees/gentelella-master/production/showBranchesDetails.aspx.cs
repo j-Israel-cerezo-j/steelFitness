@@ -17,6 +17,7 @@ namespace SteelFitnees.gentelella_master.production
         public Branche getBranche { get; private  set; }
         public List<Image> getListImagesById{ get; private set; }
         public List<Day> getListDays { get; private set; }
+        public int getIdBranche { get; set; }
         public bool getErrorBool { get; private set; } = false;
         public string getSchedulesByIdBranche{ get; private set; }
         public string getProductsByIdBranche { get; private set; }
@@ -26,6 +27,7 @@ namespace SteelFitnees.gentelella_master.production
             string stridBranche = Request.QueryString["id"];
             if (stridBranche != "" && stridBranche != null)
             {
+                getIdBranche = Convert.ToInt32(stridBranche);
                 getBrancheByid();
                 getImageById();
                 geyDays();

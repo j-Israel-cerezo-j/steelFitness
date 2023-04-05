@@ -35,11 +35,11 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="index.aspx">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">SOBRE NOSOTROS</a></li>
+                        <%--<li class="nav-item"><a class="nav-link" href="#services">SOBRE NOSOTROS</a></li>--%>
                         <li class="nav-item"><a class="nav-link" href="productsByBranche.aspx">PRODUCTOS</a></li>
                         <li class="nav-item"><a class="nav-link" href="Galeria.aspx">GALERIA</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">SUCURSALES</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">CONTACTO</a></li>
+                        <%--<li class="nav-item"><a class="nav-link" href="Index.aspx#team">SUCURSALES</a></li>--%>
+                        <%--<li class="nav-item"><a class="nav-link" href="#contact">CONTACTO</a></li>--%>
                         <li class="nav-item"><a class="nav-link" href="Login.aspx">Iniciar sesión</a></li>
                     </ul>
                 </div>
@@ -52,17 +52,17 @@
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2022</div>
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-4 text-lg-start">Copyright © 2023. Todos los derechos reservados.</div>
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                    <div class="col-lg-4 text-lg-end">
+                    <%--<div class="col-lg-4 text-lg-end">
                         <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
                         <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
-                    </div>
+                    </div>--%>
                 </div>
             </div>
         </footer>
@@ -75,6 +75,6 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js" integrity="sha256-92U7H+uBjYAJfmb+iNPi7DPoj795ZCTY4ZYmplsn/fQ=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js" integrity="sha256-92U7H+uBjYAJfmb+iNPi7DPoj795ZCTY4ZYmplsn/fQ=" crossorigin="anonymous"></script>
 </body>
 </html>

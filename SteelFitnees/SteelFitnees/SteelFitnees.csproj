@@ -197,6 +197,7 @@
     <Content Include="gentelella-master\production\js\personalizados\addProductsToBranches\recoverData.js" />
     <Content Include="gentelella-master\production\js\personalizados\addProductsToBranches\requestBranches.js" />
     <Content Include="gentelella-master\production\js\personalizados\addProductsToBranches\requestBuildFilter.js" />
+    <Content Include="gentelella-master\production\js\personalizados\addProductsToBranches\requestBuildTableFilterBy.js" />
     <Content Include="gentelella-master\production\js\personalizados\addProductsToBranches\requestProducts.js" />
     <Content Include="gentelella-master\production\js\personalizados\addProductsToBranches\update.js" />
     <Content Include="gentelella-master\production\js\personalizados\Branches\Add.js" />
@@ -224,6 +225,10 @@
     <Content Include="gentelella-master\production\js\personalizados\hours\requestBranches.js" />
     <Content Include="gentelella-master\production\js\personalizados\hours\requestBuildFilter.js" />
     <Content Include="gentelella-master\production\js\personalizados\hours\requestDays.js" />
+    <Content Include="gentelella-master\production\js\personalizados\indexUser\build\buildCardsComments.js" />
+    <Content Include="gentelella-master\production\js\personalizados\indexUser\build\buildWeeksSlc.js" />
+    <Content Include="gentelella-master\production\js\personalizados\indexUser\requestComments.js" />
+    <Content Include="gentelella-master\production\js\personalizados\indexUser\requestFilterByDates.js" />
     <Content Include="gentelella-master\production\js\personalizados\Index\build\buildCardsBranches.js" />
     <Content Include="gentelella-master\production\js\personalizados\Index\requestBranches.js" />
     <Content Include="gentelella-master\production\js\personalizados\productByBranches\build\buildCardsProducts.js" />
@@ -240,8 +245,11 @@
     <Content Include="gentelella-master\production\js\personalizados\SendEmails\ajax\sendAjax.js" />
     <Content Include="gentelella-master\production\js\personalizados\SendEmails\btnReset.js" />
     <Content Include="gentelella-master\production\js\personalizados\SendEmails\SendEmail.js" />
+    <Content Include="gentelella-master\production\js\personalizados\showBranchesDetails\ajax\branchesAjax.js" />
+    <Content Include="gentelella-master\production\js\personalizados\showBranchesDetails\buildAlert.js" />
     <Content Include="gentelella-master\production\js\personalizados\showBranchesDetails\buildProductById.js" />
     <Content Include="gentelella-master\production\js\personalizados\showBranchesDetails\buildSchedule.js" />
+    <Content Include="gentelella-master\production\js\personalizados\showBranchesDetails\requestComments.js" />
     <Content Include="gentelella-master\production\js\personalizados\utils\Ajax\request.js" />
     <Content Include="gentelella-master\production\js\personalizados\utils\Ajax\requestTables.js" />
     <Content Include="gentelella-master\production\Login.aspx" />

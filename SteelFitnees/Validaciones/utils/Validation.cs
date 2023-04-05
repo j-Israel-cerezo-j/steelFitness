@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Globalization;
+
 namespace Validaciones.utils
 {
     public class Validation
@@ -94,6 +96,17 @@ namespace Validaciones.utils
         {
             DateTime dateFecha;
             return DateTime.TryParseExact(strDate, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out dateFecha);
+        }
+        public static bool FormantDateFullFormant(string strDate)
+        {
+            DateTime dateFecha;
+            return DateTime.TryParseExact(strDate, "d/M/yyyy", null, System.Globalization.DateTimeStyles.None, out dateFecha) 
+                ||
+                DateTime.TryParseExact(strDate, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out dateFecha)
+                ||
+                DateTime.TryParseExact(strDate, "d/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out dateFecha)
+                ||
+                DateTime.TryParseExact(strDate, "dd/M/yyyy", null, System.Globalization.DateTimeStyles.None, out dateFecha);
         }
         public static bool FormantDateTime(string strDate)
         {

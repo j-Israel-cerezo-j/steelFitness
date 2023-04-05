@@ -25,6 +25,9 @@ namespace SteelFitnees.gentelella_master.production.Handlers
             else if(Request.QueryString["action"] == "table")
             {
                 getFilterByTable();
+            }else if (Request.QueryString["action"] == "weeks")
+            {
+                getFilterByWeeks();
             }
         }
         private void getFilterBy()
@@ -68,5 +71,27 @@ namespace SteelFitnees.gentelella_master.production.Handlers
             response.data = data;
             getJsonResponse = JsonConvert.SerializeObject(response);
         }
-    }
+        private void getFilterByWeeks()
+        {
+            string filterByValue = Request.QueryString["filterByValue"];
+            string filterBy = Request.QueryString["filterBy"];
+            string idBranche = Request.QueryString["id"];
+            var data = new Dictionary<string, Object>();
+            Response response = new Response();
+            try
+            {
+                string json = facedeFilter.commentsBranche(filterByValue, filterBy, idBranche);
+                data.Add("recoverData", JsonConvert.DeserializeObject<Dictionary<string, Object>[]>(json));
+                response.success = true;
+
+            }
+            catch (ServiceException se)
+            {
+                response.error = se.getMessage();
+            }
+            data.Add("footeer", "Verificar por favor");
+            response.data = data;
+            getJsonResponse = JsonConvert.SerializeObject(response);
+        }
+    }  
 }

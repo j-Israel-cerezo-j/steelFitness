@@ -82,6 +82,22 @@ namespace CapaLogicaNegocio.Services
         {
             return Converter.ToJson(productBrancheTable.table()).ToString();
         }
+        public string jsonProductBrancheTableByIdProduct(string strId)
+        {
+            if (strId == "")
+            {
+                throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
+            }
+            return Converter.ToJson(productBrancheTable.tableByIdProduct(Convert.ToInt32(strId))).ToString();
+        }
+        public string jsonProductBrancheTableByIdBranche(string strId)
+        {
+            if (strId == "")
+            {
+                throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
+            }
+            return Converter.ToJson(productBrancheTable.tableByIdBranche(Convert.ToInt32(strId))).ToString();
+        }
         public string jsonRecoverData(string strId)
         {
             if (strId == "")

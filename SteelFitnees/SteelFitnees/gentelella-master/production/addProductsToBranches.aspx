@@ -101,12 +101,12 @@
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter-left" viewBox="0 0 16 16">
 					<path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
 				</svg>
-				<label class="control-label">Filtrar por...</label>
+				<label class="control-label">Tipos de filtro...</label>
 				<select style="border-radius:6px" class="form-control" id="filter"   onchange="requestBuildFilter()">
-					<option selected value="">Seleccione una</option>
+					<option selected value="">Tipos de filtro</option>
 					<option value="fullRecords">Todos los registros</option>
-					<option value="sucursales">Sucursales</option>
-					<option value="productos">Productos</option>
+					<option value="productsBranchByBranche">Sucursales</option>
+					<option value="productsBranchByProduct">Productos</option>
 				</select>
 				
 			</div>
@@ -116,7 +116,7 @@
 				</svg>
 				<label id="filterByLbl" class="control-label">Filtrar por...</label>
 				<select style="border-radius:6px" class="form-control" id="filterTableBy" onchange="requestBuildTableFilterBy()">
-					 <option selected value="">Seleccione una</option>
+					 <option selected value="">Selecciona un tipo de filtro</option>
 				</select>				
 			</div>
 		</div>	
@@ -135,7 +135,7 @@
 	<script src="js/personalizados/addProductsToBranches/update.js"></script>
     <script src="js/personalizados/addProductsToBranches/build/slc/buildFilterSlc.js"></script>
     <script src="js/personalizados/addProductsToBranches/requestBuildFilter.js"></script>
-
+    <script src="js/personalizados/addProductsToBranches/requestBuildTableFilterBy.js"></script>
 	<script src="js/personalizados/FacadeCatalogosRecoverData/switchCatalogosRecoverData.js"></script>
 
     <script src="js/personalizados/Ajax/recoverData.js"></script>

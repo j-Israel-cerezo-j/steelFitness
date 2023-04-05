@@ -14,5 +14,13 @@ namespace CapaLogicaNegocio.Tables
         {
             return productBrancheData.tableProductBranches();
         }
+        public DataTable tableByIdProduct(int id)
+        {
+            return productBrancheData.tableProductBranchesByIdProduct(id);
+        }
+        public DataTable tableByIdBranche(int id)
+        {
+            return productBrancheData.tableProductBranchesByIdBranche(id);
+        }
     }
 }

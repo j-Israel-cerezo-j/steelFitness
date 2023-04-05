@@ -2,7 +2,7 @@
 function sendAjax(formData) {
     console.log("hola mubdo")
     Swal.fire({
-        title: 'Cargando...',
+        title: 'Enviando...',
         showConfirmButton: false
     })
     var f = $(this);

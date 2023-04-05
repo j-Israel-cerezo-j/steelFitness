@@ -4,3 +4,9 @@ C:\Users\synoc\OneDrive\Desktop\SteelFitness\SteelFitnees\Validaciones\obj\Debug
 C:\Users\synoc\OneDrive\Desktop\SteelFitness\SteelFitnees\Validaciones\obj\Debug\Validaciones.csproj.CoreCompileInputs.cache
 C:\Users\synoc\OneDrive\Desktop\SteelFitness\SteelFitnees\Validaciones\obj\Debug\Validaciones.dll
 C:\Users\synoc\OneDrive\Desktop\SteelFitness\SteelFitnees\Validaciones\obj\Debug\Validaciones.pdb
+C:\Users\jisra\OneDrive\Documentos\israel\steelFitness\SteelFitnees\Validaciones\bin\Debug\Validaciones.dll
+C:\Users\jisra\OneDrive\Documentos\israel\steelFitness\SteelFitnees\Validaciones\bin\Debug\Validaciones.pdb
+C:\Users\jisra\OneDrive\Documentos\israel\steelFitness\SteelFitnees\Validaciones\obj\Debug\Validaciones.csproj.AssemblyReference.cache
+C:\Users\jisra\OneDrive\Documentos\israel\steelFitness\SteelFitnees\Validaciones\obj\Debug\Validaciones.csproj.CoreCompileInputs.cache
+C:\Users\jisra\OneDrive\Documentos\israel\steelFitness\SteelFitnees\Validaciones\obj\Debug\Validaciones.dll
+C:\Users\jisra\OneDrive\Documentos\israel\steelFitness\SteelFitnees\Validaciones\obj\Debug\Validaciones.pdb

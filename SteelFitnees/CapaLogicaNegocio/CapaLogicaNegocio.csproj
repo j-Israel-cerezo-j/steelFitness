@@ -104,6 +104,7 @@
     <Compile Include="utils\Converter.cs" />
     <Compile Include="utils\DuplicateField.cs" />
     <Compile Include="utils\EncryptPassword.cs" />
+    <Compile Include="utils\Html.cs" />
     <Compile Include="utils\Images.cs" />
     <Compile Include="utils\Path.cs" />
     <Compile Include="utils\RetrieveAtributes.cs" />
@@ -111,6 +112,9 @@
   <ItemGroup>
     <Content Include="templatesGymHtml\gymHtml.txt" />
     <Content Include="templatesGymHtml\gymMessageHtml.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="templatesGymHtml\img\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

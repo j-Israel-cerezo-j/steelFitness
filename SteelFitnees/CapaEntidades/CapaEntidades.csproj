@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Branche.cs" />
+    <Compile Include="CommentsBranch.cs" />
     <Compile Include="Contact.cs" />
     <Compile Include="Day.cs" />
     <Compile Include="Hour.cs" />
