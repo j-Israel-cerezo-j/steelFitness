@@ -68,7 +68,8 @@
     </section>
     <%--Horarios fin--%>
 
-        <!--? Gallery Area Start -->
+    <div class="container">
+             <!--? Gallery Area Start -->
     <div class="gallery-area">
         <div class="container-fluid p-0 fix">
             <div class="row">
@@ -84,6 +85,8 @@
         </div>
     </div>
         <!-- Gallery Area End -->
+    </div>
+   
         <!--? Want To work -->
     <section class="wantToWork-area w-padding">
         <div class="container">
@@ -91,10 +94,10 @@
                 <div class="col-lg-6 col-md-9 col-sm-9">
                     <div class="section-tittle">
                         <span>Productos de la sucursal</span>
-                        <h2>Nuestros productos</h2>
+                        <h2>Algunos de nuestros productos</h2>
                     </div>
                 </div>
-                <div class="col-xl-2 col-lg-2 col-md-3">
+                <div class="col-xl-3 col-lg-3 col-md-3">
                     <a href="productsByBranche.aspx" class="btn wantToWork-btn f-right">Mas productos</a>
                 </div>
             </div>

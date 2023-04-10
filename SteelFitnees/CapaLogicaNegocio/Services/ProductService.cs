@@ -172,6 +172,25 @@ namespace CapaLogicaNegocio.Services
             return Converter.ToList(productTable.listPorducrsByCharacters(caracteres));
 
         }
+        public List<string> onkeyupSearchListByCharacteresAndIdBranche(string caracteres,string strId)
+        {
+            if (strId == "")
+            {
+                throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
+            }
+            caracteres = "%" + caracteres + "%";
+            return Converter.ToList(productTable.listProductsByCharactersAndIdBranche(caracteres,Convert.ToInt32(strId)));
+
+        }
+        public string onkeyupSearchTableByIdBrancheAndCharacteres(string caracteres,string strId)
+        {
+            if (strId == "")
+            {
+                throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
+            }
+            return Converter.ToJson(productTable.ByIdBrancheAndCharacteres(Convert.ToInt32(strId),caracteres)).ToString();
+
+        }
         public string onkeyupSearchTable(string caracteres)
         {            
             return Converter.ToJson(productList.listProductByCharacters(caracteres)).ToString();

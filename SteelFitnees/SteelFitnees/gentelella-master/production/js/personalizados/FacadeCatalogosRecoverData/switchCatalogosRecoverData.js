@@ -64,6 +64,16 @@
                 document.getElementById("save").value = json[i].id;
             }
             break;
+        case 'aboutUsAdmin':
+            console.log(json);
+            for (var i = 0; i < json.length; i++) {
+                document.getElementById("mision").value = json[i].mision;
+                document.getElementById("vision").value = json[i].vision;                
+                document.getElementById("valores").value = json[i].valores;
+
+                document.getElementById("save").value = json[i].id;
+            }
+            break;
     }
 }
 

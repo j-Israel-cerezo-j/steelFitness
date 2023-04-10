@@ -10,7 +10,7 @@
                 `<div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-team mb-30">
                         <div class="team-img">
-                            <img src="${json[i].imagen}" alt="" width="90" height="350">
+                            <img src="${json[i].imagen}" alt="" width="20" height="280">
                             <div class="team-caption">
                                 <h3><a >${json[i].producto}</a></h3>
                                 <!-- Blog Social -->

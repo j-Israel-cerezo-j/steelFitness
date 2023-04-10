@@ -91,6 +91,8 @@ function switchTablePahe(json, info) {
             buildTable(json);
         case 'productBranche':
             buildTable(json);
+        case 'aboutUsAdmin':
+            buildTable(json);
             break;
     }
 

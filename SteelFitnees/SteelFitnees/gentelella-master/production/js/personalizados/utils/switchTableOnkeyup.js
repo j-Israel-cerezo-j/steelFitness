@@ -16,5 +16,8 @@
         case 'commentsCharacteres':
             buildCardsComments(json, jsonOnkeyp);
             break;
+        case 'productsByBrancheAndCharacteres':
+            buildProductById(json, jsonOnkeyp);
+            break;
     }
 }

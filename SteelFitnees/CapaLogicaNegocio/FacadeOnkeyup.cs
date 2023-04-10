@@ -14,7 +14,7 @@ namespace CapaLogicaNegocio
         private HoursService hoursService = new HoursService();
         private ProductService productService = new ProductService();
         private ProductBranchService branchService = new ProductBranchService();
-        public List<string> coincidences(string catalogo, string caracteres)
+        public List<string> coincidences(string catalogo, string caracteres,string strId="")
         {
             char[] charsToTrim = { ' ' };
             string result = caracteres.Trim(charsToTrim);            
@@ -30,11 +30,13 @@ namespace CapaLogicaNegocio
                     return productService.onkeyupSearchList(result);
                 case "productBranche":
                     return branchService.onkeyupSearchList(result);
+                case "productsByBrancheAndCharacteres":
+                    return productService.onkeyupSearchListByCharacteresAndIdBranche(result,strId);
                 default:
                     throw new ServiceException(MessageErrors.MessageErrors.catalogNoExists);
             }
         }
-        public string tables(string catalogo, string caracteres)
+        public string tables(string catalogo, string caracteres,string strId="")
         {
             char[] charsToTrim = { ' ' };
             string result = caracteres.Trim(charsToTrim);
@@ -51,6 +53,8 @@ namespace CapaLogicaNegocio
                     return productService.onkeyupSearchTable(result);
                 case "productBranche":
                     return branchService.onkeyupSearchTable(result);
+                case "productsByBrancheAndCharacteres":
+                    return productService.onkeyupSearchTableByIdBrancheAndCharacteres(result, strId);
                 default:
                     throw new ServiceException(MessageErrors.MessageErrors.catalogNoExists);
             }

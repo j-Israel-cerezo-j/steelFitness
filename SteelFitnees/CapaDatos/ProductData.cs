@@ -186,7 +186,38 @@ namespace CapaDatos
             }
             return schedules;
         }
-        public bool delete(string strIds)
+        public DataTable tableProductsByIdBrancheAndCharacteres(int id, string characteres)
+        {
+            DataTable schedules = new DataTable();
+            SqlDataReader renglon;
+            try
+            {
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "pro_tableProductsByIdSucursalAndCharacteres";
+                Comando.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));
+                Comando.Parameters["@id"].Value = id;
+                Comando.Parameters.Add(new SqlParameter("@characters", SqlDbType.Text));
+                Comando.Parameters["@characters"].Value = characteres;
+                Conexion.Open();
+                renglon = Comando.ExecuteReader();
+                schedules.Load(renglon);
+            }
+            catch (SqlException e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+                Comando.Parameters.Clear();
+            }
+            return schedules;
+        }
+
+            public bool delete(string strIds)
         {
             bool ban;
             Comando.CommandType = CommandType.StoredProcedure;
@@ -256,6 +287,36 @@ namespace CapaDatos
                 Comando.CommandText = "pro_listProductsByCharacters";
                 Comando.Parameters.Add(new SqlParameter("@characters", SqlDbType.VarChar));
                 Comando.Parameters["@characters"].Value = characters;
+                Conexion.Open();
+                renglon = Comando.ExecuteReader();
+                schedules.Load(renglon);
+            }
+            catch (SqlException e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+                Comando.Parameters.Clear();
+            }
+            return schedules;
+        }
+        public DataTable listProductsByCharactersAndIdBranche(string characters,int id)
+        {
+            DataTable schedules = new DataTable();
+            SqlDataReader renglon;
+            try
+            {
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "pro_listProductsByCharactersAndIdBranche";
+                Comando.Parameters.Add(new SqlParameter("@characters", SqlDbType.VarChar));
+                Comando.Parameters["@characters"].Value = characters;
+                Comando.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));
+                Comando.Parameters["@id"].Value = id;
                 Conexion.Open();
                 renglon = Comando.ExecuteReader();
                 schedules.Load(renglon);

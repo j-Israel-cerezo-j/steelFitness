@@ -9,8 +9,6 @@
         onkeyupInputEmtyy('formFile');
     } else {
         var formData = new FormData(document.getElementById("form1"));
-        console.log(formData);
-        console.log(document.getElementById("formFile").value);
         catalogosAddUpdateDelete('add', formData)
         $("#resert").click();
     }

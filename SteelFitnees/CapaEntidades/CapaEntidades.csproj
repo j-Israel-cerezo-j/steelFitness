@@ -44,6 +44,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUs.cs" />
     <Compile Include="Branche.cs" />
     <Compile Include="CommentsBranch.cs" />
     <Compile Include="Contact.cs" />

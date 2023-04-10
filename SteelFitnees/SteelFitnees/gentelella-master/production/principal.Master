@@ -18,6 +18,9 @@
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="frontend/css/styleIndex.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -38,6 +41,7 @@
                         <%--<li class="nav-item"><a class="nav-link" href="#services">SOBRE NOSOTROS</a></li>--%>
                         <li class="nav-item"><a class="nav-link" href="productsByBranche.aspx">PRODUCTOS</a></li>
                         <li class="nav-item"><a class="nav-link" href="Galeria.aspx">GALERIA</a></li>
+                        <li class="nav-item"><a class="nav-link" href="aboutUs.aspx">Conocenos</a></li>
                         <%--<li class="nav-item"><a class="nav-link" href="Index.aspx#team">SUCURSALES</a></li>--%>
                         <%--<li class="nav-item"><a class="nav-link" href="#contact">CONTACTO</a></li>--%>
                         <li class="nav-item"><a class="nav-link" href="Login.aspx">Iniciar sesión</a></li>

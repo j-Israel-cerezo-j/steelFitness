@@ -1,5 +1,4 @@
-﻿function buildProductById(json) {
-    console.log(json)
+﻿function buildProductById(json, jsonOnkeyp = true) {
     document.getElementById("containerCardsProducts").innerHTML = ""
 
     var ban = false;
@@ -34,6 +33,9 @@
     if (ban) {
         document.getElementById("containerCardsProducts").innerHTML = htmlProducts
 
+    } else if (!jsonOnkeyp) {
+        var id = document.getElementById("branches").value
+        document.getElementById("containerCardsProducts").innerHTML = "<h4 style='margin-bottom:100px' class='text-center'>Lo siento,el producto buscado no se encuentra en la sucursal en estos momentos,pero dejanoslo saber en los comentarios en la parte de sucursales <a style='color:#0d6efd' href='showBranchesDetails.aspx?id="+id+"'>Da click aqui para ir a la sucursal y dejar tu comentario (en la parte de abajo de la pagina)</a> y lo tendremos en cuenta. Gracias</h4>"
     } else {
         document.getElementById("containerCardsProducts").innerHTML = `<h2 style="text-align:center">Sin productos por el momento</h2>`
     }

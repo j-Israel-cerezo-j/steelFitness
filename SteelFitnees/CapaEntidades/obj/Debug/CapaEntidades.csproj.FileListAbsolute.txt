@@ -52,3 +52,12 @@ C:\Users\synoc\OneDrive\Documentos\Israel\steelFitness\SteelFitnees\CapaEntidade
 C:\Users\synoc\OneDrive\Documentos\Israel\steelFitness\SteelFitnees\CapaEntidades\obj\Debug\CapaEntidades.csproj.CopyComplete
 C:\Users\synoc\OneDrive\Documentos\Israel\steelFitness\SteelFitnees\CapaEntidades\obj\Debug\CapaEntidades.dll
 C:\Users\synoc\OneDrive\Documentos\Israel\steelFitness\SteelFitnees\CapaEntidades\obj\Debug\CapaEntidades.pdb
+C:\Users\jisra\OneDrive\Documentos\israel\steelFitness\steelFitness\SteelFitnees\CapaEntidades\bin\Debug\CapaEntidades.dll
+C:\Users\jisra\OneDrive\Documentos\israel\steelFitness\steelFitness\SteelFitnees\CapaEntidades\bin\Debug\CapaEntidades.pdb
+C:\Users\jisra\OneDrive\Documentos\israel\steelFitness\steelFitness\SteelFitnees\CapaEntidades\bin\Debug\Validaciones.dll
+C:\Users\jisra\OneDrive\Documentos\israel\steelFitness\steelFitness\SteelFitnees\CapaEntidades\bin\Debug\Validaciones.pdb
+C:\Users\jisra\OneDrive\Documentos\israel\steelFitness\steelFitness\SteelFitnees\CapaEntidades\obj\Debug\CapaEntidades.csproj.AssemblyReference.cache
+C:\Users\jisra\OneDrive\Documentos\israel\steelFitness\steelFitness\SteelFitnees\CapaEntidades\obj\Debug\CapaEntidades.csproj.CoreCompileInputs.cache
+C:\Users\jisra\OneDrive\Documentos\israel\steelFitness\steelFitness\SteelFitnees\CapaEntidades\obj\Debug\CapaEntidades.csproj.CopyComplete
+C:\Users\jisra\OneDrive\Documentos\israel\steelFitness\steelFitness\SteelFitnees\CapaEntidades\obj\Debug\CapaEntidades.dll
+C:\Users\jisra\OneDrive\Documentos\israel\steelFitness\steelFitness\SteelFitnees\CapaEntidades\obj\Debug\CapaEntidades.pdb

@@ -8,6 +8,7 @@ namespace CapaLogicaNegocio.MessageErrors
 {
     public class MessageErrors
     {
+        public static string selectABranchPlease = "Seleccione una sucursal por favor por favor";
         public static string incorrectFomrmantEmail = "El correo electronico no tiene el formato correcto, verifica por favor";
         public static string failedSendEmail = "Ocurrió un error al enviar el correo electrónico";
         public static string authenticationFailedSendEmail = "Tu correo y/o contraseña son incorrectos, verifica porr favor";

@@ -79,7 +79,8 @@
                                             <li><a href="manageHours.aspx">Horarios</a></li>
                                             <li><a href="manageProducts.aspx">Productos</a></li>
                                             <li><a href="manageEmails.aspx">Enviar correos</a></li>
-                                            <li><a href="addProductsToBranches.aspx">Agregar productos a sucursales</a></li>
+                                            <li><a href="aboutUsAdmin.aspx">Sobre nosotros</a></li>
+                                            <li><a href="addProductsToBranches.aspx">Agregar productos a sucursales</a></li>                                            
                                         </ul>
                                     </li>
                                 </ul>

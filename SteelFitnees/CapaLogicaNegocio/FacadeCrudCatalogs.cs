@@ -16,6 +16,7 @@ namespace CapaLogicaNegocio
         private ProductService productService = new ProductService();
         private BrancheSerevice brancheSerevice = new BrancheSerevice();
         private ProductBranchService productBranchService = new ProductBranchService();
+        private AboutUsService aboutUsService = new AboutUsService();
         public bool add(string catalog, Dictionary<string, string> request, List<HttpPostedFile> filesList)
         {
             if (catalog == "")
@@ -34,6 +35,8 @@ namespace CapaLogicaNegocio
                     return brancheSerevice.add(request, filesList);
                 case "productBranche":
                     return productBranchService.add(request);
+                case "aboutUsAdmin":
+                    return aboutUsService.add(request);
                 default:
                     throw new ServiceException(MessageErrors.MessageErrors.catalogNoExists);
 
@@ -57,6 +60,8 @@ namespace CapaLogicaNegocio
                     return brancheSerevice.update(request, strId, filesList);
                 case "productBranche":
                     return productBranchService.updateProductBranche(request, strId);
+                case "aboutUsAdmin":
+                    return aboutUsService.updateAboutUs(request, strId);
                 default:
                     throw new ServiceException(MessageErrors.MessageErrors.catalogNoExists);
 
@@ -80,6 +85,8 @@ namespace CapaLogicaNegocio
                     return brancheSerevice.deleteBranche(strIds);
                 case "productBranche":
                     return productBranchService.deleteProductBranch(strIds);
+                case "aboutUsAdmin":
+                    return aboutUsService.deleteAboutUs(strIds);
                 default:
                     throw new ServiceException(MessageErrors.MessageErrors.noneTable);
             }
@@ -103,6 +110,8 @@ namespace CapaLogicaNegocio
                     return brancheSerevice.jsonRecoverData(strId);
                 case "productBranche":
                     return productBranchService.jsonRecoverData(strId);
+                case "aboutUsAdmin":
+                    return aboutUsService.jsonRecoverData(strId);
                 default:
                     throw new ServiceException(MessageErrors.MessageErrors.noneTable);
             }
@@ -125,6 +134,8 @@ namespace CapaLogicaNegocio
                     return brancheSerevice.jsonBranches();
                 case "productBranche":
                     return productBranchService.jsonProductBrancheTable();
+                case "aboutUsAdmin":
+                    return aboutUsService.jsonAboutUs();
                 default :
                     throw new ServiceException(MessageErrors.MessageErrors.noneTable);
             }

@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaLogicaNegocio;
+using CapaLogicaNegocio.MessageErrors;
+
 namespace SteelFitnees.gentelella_master.production.Handlers
 {
     public partial class OnkeyupSearchController : System.Web.UI.Page
@@ -24,7 +26,10 @@ namespace SteelFitnees.gentelella_master.production.Handlers
             else if (action == "comments")
             {
                 onkeyupSearchComments();
-            }            
+            }else if (action=="productosByBranche")
+            {
+                onkeyupSearchProductosByBranche();
+            }
         }
         private void onkeyupSearch()
         {
@@ -75,6 +80,40 @@ namespace SteelFitnees.gentelella_master.production.Handlers
                 {
                     response.error = e.getMessage();
                 }
+            }
+            data.Add("footeer", "Verificar por favor");
+            response.data = data;
+            getJsonResponse = JsonConvert.SerializeObject(response);
+        }
+        private void onkeyupSearchProductosByBranche()
+        {
+            var data = new Dictionary<string, Object>();
+            Response response = new Response();
+            string catalogo = Request.QueryString["catalogo"];
+            string strId= Request.QueryString["id"];
+            string caracteresDeBusqueda = Request.Form["onkeyupCoincidencias"];
+
+            try
+            {
+                if (strId=="" || strId =="-1")
+                {
+                    throw new ServiceException(MessageErrors.selectABranchPlease);
+                }
+                var coincidencias = facadeOnkeyup.coincidences(catalogo, caracteresDeBusqueda, strId);
+                var productsJson = facadeOnkeyup.tables(catalogo, caracteresDeBusqueda, strId);
+                if (productsJson.Length <= 2)
+                {
+                    data.Add("accion", "sinCoincidencias");
+                }
+                data.Add("coincidencias", coincidencias);
+                data.Add("catalogo", catalogo);                
+                data.Add("table", JsonConvert.DeserializeObject(productsJson));
+                response.success = true;
+
+            }
+            catch (ServiceException e)
+            {
+                response.error = e.getMessage();
             }
             data.Add("footeer", "Verificar por favor");
             response.data = data;

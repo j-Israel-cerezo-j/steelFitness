@@ -150,6 +150,8 @@
     <Content Include="gentelella-master\docs\fonts\scss\_stacked.scss" />
     <Content Include="gentelella-master\docs\fonts\scss\_variables.scss" />
     <Content Include="gentelella-master\package.json" />
+    <Content Include="gentelella-master\production\aboutUs.aspx" />
+    <Content Include="gentelella-master\production\aboutUsAdmin.aspx" />
     <Content Include="gentelella-master\production\addProductsToBranches.aspx" />
     <Content Include="gentelella-master\production\adminMaster.Master" />
     <Content Include="gentelella-master\production\bootstrap-5.0.2-dist\css\bootstrap-grid.css.map" />
@@ -175,6 +177,7 @@
     <Content Include="gentelella-master\production\bootstrap-5.0.2-dist\js\bootstrap.js.map" />
     <Content Include="gentelella-master\production\bootstrap-5.0.2-dist\js\bootstrap.min.js.map" />
     <Content Include="gentelella-master\production\frontend\templatesEmailGym\gymMessageHtml.html" />
+    <Content Include="gentelella-master\production\Handlers\aboutUsController.aspx" />
     <Content Include="gentelella-master\production\Handlers\contactController.aspx" />
     <Content Include="gentelella-master\production\Handlers\daysController.aspx" />
     <Content Include="gentelella-master\production\Handlers\emailController.aspx" />
@@ -185,9 +188,19 @@
     <Content Include="gentelella-master\production\Handlers\productsController.aspx" />
     <Content Include="gentelella-master\production\Handlers\sucursalesController.aspx" />
     <Content Include="gentelella-master\production\Handlers\tablesController.aspx" />
+    <Content Include="gentelella-master\production\images\perzonalizadas\aboutUs\misongym.png" />
     <Content Include="gentelella-master\production\images\perzonalizadas\login\images.jpg" />
     <Content Include="gentelella-master\production\images\perzonalizadas\userL\285655_user_icon.png" />
     <Content Include="gentelella-master\production\indexUser.aspx" />
+    <Content Include="gentelella-master\production\js\personalizados\aboutUsAdmin\add.js" />
+    <Content Include="gentelella-master\production\js\personalizados\aboutUsAdmin\buildTableRequestOnload.js" />
+    <Content Include="gentelella-master\production\js\personalizados\aboutUsAdmin\build\buildTable.js" />
+    <Content Include="gentelella-master\production\js\personalizados\aboutUsAdmin\delete.js" />
+    <Content Include="gentelella-master\production\js\personalizados\aboutUsAdmin\recoverData.js" />
+    <Content Include="gentelella-master\production\js\personalizados\aboutUsAdmin\update.js" />
+    <Content Include="gentelella-master\production\js\personalizados\aboutUsUser\aboutUsRequest.js" />
+    <Content Include="gentelella-master\production\js\personalizados\aboutUsUser\build\buildCardsAboutUs.js" />
+    <Content Include="gentelella-master\production\js\personalizados\aboutUsUser\build\buildValores.js" />
     <Content Include="gentelella-master\production\js\personalizados\addProductsToBranches\add.js" />
     <Content Include="gentelella-master\production\js\personalizados\addProductsToBranches\buildTableOnload.js" />
     <Content Include="gentelella-master\production\js\personalizados\addProductsToBranches\build\slc\buildFilterSlc.js" />
@@ -237,6 +250,7 @@
     <Content Include="gentelella-master\production\js\personalizados\Index\requestBranches.js" />
     <Content Include="gentelella-master\production\js\personalizados\productByBranches\build\buildCardsProducts.js" />
     <Content Include="gentelella-master\production\js\personalizados\productByBranches\build\slc\buildBranchesSlc.js" />
+    <Content Include="gentelella-master\production\js\personalizados\productByBranches\OnkeyupSearch.js" />
     <Content Include="gentelella-master\production\js\personalizados\productByBranches\requestBranches.js" />
     <Content Include="gentelella-master\production\js\personalizados\productByBranches\requestProductByBranche.js" />
     <Content Include="gentelella-master\production\js\personalizados\Productos\add.js" />
@@ -5789,6 +5803,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="gentelella-master\production\aboutUs.aspx.cs">
+      <DependentUpon>aboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gentelella-master\production\aboutUs.aspx.designer.cs">
+      <DependentUpon>aboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gentelella-master\production\aboutUsAdmin.aspx.cs">
+      <DependentUpon>aboutUsAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gentelella-master\production\aboutUsAdmin.aspx.designer.cs">
+      <DependentUpon>aboutUsAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="gentelella-master\production\addProductsToBranches.aspx.cs">
       <DependentUpon>addProductsToBranches.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -5809,6 +5837,13 @@
     </Compile>
     <Compile Include="gentelella-master\production\Galeria.aspx.designer.cs">
       <DependentUpon>Galeria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gentelella-master\production\Handlers\aboutUsController.aspx.cs">
+      <DependentUpon>aboutUsController.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gentelella-master\production\Handlers\aboutUsController.aspx.designer.cs">
+      <DependentUpon>aboutUsController.aspx</DependentUpon>
     </Compile>
     <Compile Include="gentelella-master\production\Handlers\contactController.aspx.cs">
       <DependentUpon>contactController.aspx</DependentUpon>

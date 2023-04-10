@@ -5,7 +5,6 @@ function requestTablesAjax(callback) {
     table
         .then((resp) => resp.json())
         .then((resp) => {
-            console.log(resp);
             callback(resp.data.recoverTable);
         });    
 }

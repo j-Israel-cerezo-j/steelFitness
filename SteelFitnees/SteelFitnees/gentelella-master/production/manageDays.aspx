@@ -66,7 +66,7 @@
 						</div>	
 					</div>
 				</div>						
-				<input type="hidden" id="catalogo" name="catalogo" value="dias" />						
+				<input type="hidden" id="catalogo" name="catalogo" value="dias" />
 			</form>
 			<div style="margin-top:30px;" class="x_title"></div>
 			<h2>Dias<small></small></h2>

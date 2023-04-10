@@ -3,6 +3,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="templates/fitnessclub-master/assets/css/style.css"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
             <!-- Masthead-->
@@ -58,7 +59,9 @@
             <h2  class="section-heading text-uppercase">Sucursales</h2>
             <h3 class="section-subheading text-muted">Visita nuestras sucursales</h3>
         </div>
-        <div class="row mt-5" id="team"></div>   
+        <div class="container">
+            <div class="row mt-5" id="team"></div>   
+        </div>        
       <!-- Inner -->
     </div>
     <!-- Carousel wrapper -->    
@@ -84,8 +87,8 @@
                         </div>
                     </div>
                 </div>                                    
-                <!-- Submit Button-->
-                <div class="text-center"><button style="padding:15px;" class="btn btn-primary" type="button" id="submitButton" onclick="addContact()">ENVIAR</button></div>
+                <!-- Submit Button-->               
+                <div class="text-center"><button style="padding: 30px;font-size: 25px;" class="btn" type="button" id="submitButton" onclick="addContact()">ENVIAR</button></div>
             </form>
             
         </div>
