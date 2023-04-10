@@ -35,7 +35,11 @@ namespace CapaLogicaNegocio.Services
                     string bodyEmail = RetrieveAtributes.values(request, "info");
                     string senderMail = RetrieveAtributes.values(request, "senderMail");
                     string senderPassword = RetrieveAtributes.values(request, "senderPassword");
-                                        
+
+                    if (!senderMail.Contains("@"))
+                    {
+                        throw new ServiceException(MessageErrors.MessageErrors.incorrectFomrmantEmail);
+                    }
                     Attachment adjunto = new Attachment(file.InputStream, file.FileName);
                     AlternateView htmlView = AlternateView.CreateAlternateViewFromString(Html.htmlTemplateEmail(), null, "text/html");
                     LinkedResource linkedResource = new LinkedResource(adjunto.ContentStream, adjunto.ContentType);
@@ -59,6 +63,18 @@ namespace CapaLogicaNegocio.Services
                     // Enviar el mensaje
                     cliente.Send(mensaje);
                     ban = true;
+                }
+                catch (SmtpException e)
+                {
+                    
+                    if (e.Message.Contains("535") || e.Message.Contains("authentication failed"))
+                    {
+                        throw new ServiceException(MessageErrors.MessageErrors.authenticationFailedSendEmail);
+                    }
+                    else
+                    {
+                        throw new ServiceException(MessageErrors.MessageErrors.failedSendEmail);                        
+                    }
                 }
                 catch (ServiceException se)
                 {

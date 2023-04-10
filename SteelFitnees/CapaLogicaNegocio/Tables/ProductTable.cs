@@ -12,8 +12,12 @@ namespace CapaLogicaNegocio.Tables
     public  class ProductTable
     {
         private ProductData producData =new ProductData();
-        public DataTable tableByIdBranche(int id) {
+        public DataTable ByIdBranche(int id) {
             return producData.tableProductsByIdBranche(id);
+        }
+        public DataTable listPorducrsByCharacters(string characters)
+        {
+            return producData.listProductsByCharacters(characters);
         }
     }
 }

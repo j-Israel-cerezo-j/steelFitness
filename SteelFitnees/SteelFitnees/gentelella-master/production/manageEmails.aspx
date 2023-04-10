@@ -28,13 +28,16 @@
 				<div class="row mt-4">
 					<label class="form-label"><b>Datos del remitente:</b></label>
 					<div class="col-lg-6 col-md-6 col-sm-12 col-xsm-12 form-group mt-3" style="padding-right: 0px;padding-left:10px;">						
-						<input  style="border-radius:6px" type="text" class="form-control has-feedback-left" required="required" name="senderMail" id="senderMail" placeholder="Correo remitente"  onkeyup="onkeyupInputEmtyy('senderMail')">
+						<input  style="border-radius:6px" type="text" class="form-control has-feedback-left" required="required" name="senderMail" id="senderMail" placeholder="Correo remitente" onkeyup="formantCorrectInput('senderMail','inputEmpty','inputFormantIncorrect','@')">
 						<div class="valid-feedback">
 								¡ Buen trabajo!
 						</div>
-						<div class="invalid-feedback">
+						<div class="invalid-feedback" id="inputEmpty">
 							El correo es requerido
 						</div>
+						<div class="invalid-feedback" id="inputFormantIncorrect" style="display:none">
+							Formato incorrecto del correo @
+					    </div>
 						<span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
 					</div>					
 					<div class="col-lg-6 col-md-6 col-sm-12 col-xsm-12 form-group" style="margin-top:15px;padding-right: 0px;padding-left:10px;">

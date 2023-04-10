@@ -107,8 +107,7 @@
 					<option value="fullRecords">Todos los registros</option>
 					<option value="productsBranchByBranche">Sucursales</option>
 					<option value="productsBranchByProduct">Productos</option>
-				</select>
-				
+				</select>				
 			</div>
 			<div class="form-group col-lg-3 col-md-6 col-sm-12 ">
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter-left" viewBox="0 0 16 16">
@@ -118,6 +117,19 @@
 				<select style="border-radius:6px" class="form-control" id="filterTableBy" onchange="requestBuildTableFilterBy()">
 					 <option selected value="">Selecciona un tipo de filtro</option>
 				</select>				
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6"  style="margin-top:19px;justify-content:right">
+				<form id="formOnkeyup">												
+					<div class="input-group" > 
+					    <div class="form-outline" style="width: 100%;">
+							<svg style=" position: absolute;width: 20px; height: 20px; left: 12px; top: 50%; transform: translateY(-50%);" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+	    						<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+	    					</svg>
+					        <input class="form-control" list="datalistOptionsSerch" id="exampleDataList" placeholder="Buscar..." style="border-radius:10px; width: 100%;padding-left: 40px;padding-right: 15px;" onkeyup="onkeyupSearchh()" name="onkeyupCoincidencias">
+					        <datalist id="datalistOptionsSerch"></datalist>
+					    </div>
+					</div>
+				</form>
 			</div>
 		</div>	
 		<div class="mt-4" id="containerTableProductBranches"></div>
@@ -136,19 +148,22 @@
     <script src="js/personalizados/addProductsToBranches/build/slc/buildFilterSlc.js"></script>
     <script src="js/personalizados/addProductsToBranches/requestBuildFilter.js"></script>
     <script src="js/personalizados/addProductsToBranches/requestBuildTableFilterBy.js"></script>
+    <script src="js/personalizados/addProductsToBranches/OnkeyupSearch.js"></script>
+
 	<script src="js/personalizados/FacadeCatalogosRecoverData/switchCatalogosRecoverData.js"></script>
 
     <script src="js/personalizados/Ajax/recoverData.js"></script>
     <script src="js/personalizados/Ajax/submitAjaxCatalogos.js"></script>  
   
+	<script src="js/personalizados/utils/Ajax/onkeyupSearchCatalogos.js"></script>
     <script src="js/personalizados/utils/Ajax/requestTables.js"></script>
     <script src="js/personalizados/utils/Ajax/request.js"></script>
+
 	<script src="js/personalizados/utils/onkeyupInputEmpty.js"></script>
 	<script src="js/personalizados/utils/onkeyupNoSelectInSlc.js"></script>
     <script src="js/personalizados/utils/defaultBtnsDisplay.js"></script>
     <script src="js/personalizados/utils/currentDate.js"></script>
-	<script src="js/personalizados/utils/switchTableOnkeyup.js"></script>
-    <script src="js/personalizados/utils/Ajax/onkeyupSearchCatalogos.js"></script>
+	<script src="js/personalizados/utils/switchTableOnkeyup.js"></script>    
 
 	<script type="text/javascript">
 		window.onload = function () {

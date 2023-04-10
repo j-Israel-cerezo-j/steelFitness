@@ -19,14 +19,6 @@
             if (result.isConfirmed) {
                 var formData = new FormData(document.getElementById("form1"));
                 sendAjax(formData);
-                document.getElementById("form1").reset();
-                document.getElementById("image").setAttribute("src", "");
-                document.getElementById("msjImagenCargadaAutomatica").innerHTML = ""
-                onkeyupInputEmtyy('asunto');
-                onkeyupInputEmtyy('senderMail');
-                onkeyupInputEmtyy('senderPassword');
-                onkeyupInputEmtyy('formFile');
-                onkeyupInputEmtyy('info');
             }
         })
     }  

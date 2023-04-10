@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
 using System.Data;
+using CapaLogicaNegocio.RecoverData;
+
 namespace CapaLogicaNegocio.Tables
 {
     public class DaysTable
@@ -14,5 +16,10 @@ namespace CapaLogicaNegocio.Tables
         {
             return dayDatos.tableDays();
         }
+        public DataTable listDaysByCharactersConicidences(string characters)
+        {
+            return dayDatos.listDaysByCharactersConicidences(characters);
+        }
+
     }
 }

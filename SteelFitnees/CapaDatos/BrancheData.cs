@@ -186,6 +186,40 @@ namespace CapaDatos
             }
             return CommentSBranch;
         }
+        public List<CommentBranch> listCommentsByIdBranchesAndCharacteres(int id, string characteres)
+        {
+            List<CommentBranch> CommentSBranch = new List<CommentBranch>();
+            try
+            {
+                SqlDataReader renglon;
+                Conexion.Open();
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "pro_listCommentByIdBrancheAndCharacteres";
+                Comando.Parameters.Add(new SqlParameter("@id", SqlDbType.Int));
+                Comando.Parameters["@id"].Value = id;                
+                Comando.Parameters.Add(new SqlParameter("@characters", SqlDbType.Text));
+                Comando.Parameters["@characters"].Value = characteres;
+                renglon = Comando.ExecuteReader();
+                while (renglon.Read())
+                {
+                    CommentSBranch.Add(new CommentBranch(renglon));
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+                Comando.Parameters.Clear();
+
+            }
+            return CommentSBranch;
+        }
         public DataTable tableBranches()
         {
             DataTable schedules = new DataTable();
@@ -338,6 +372,66 @@ namespace CapaDatos
             }
             return ban;
 
+        }      
+        public List<Branche> tableBranchesBranchesByCharactersConicidences(string characters)
+        {
+            List<Branche> branches = new List<Branche>();
+            try
+            {
+                SqlDataReader renglon;
+                Conexion.Open();
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "pro_listBranchesByCharacters";
+                Comando.Parameters.Add(new SqlParameter("@characters", SqlDbType.Text));
+                Comando.Parameters["@characters"].Value = characters;
+                renglon = Comando.ExecuteReader();
+                while (renglon.Read())
+                {
+                    branches.Add(new Branche(renglon));
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+                Comando.Parameters.Clear();
+
+            }
+            return branches;
+        }
+        public DataTable listBranchesBranchesByCharactersConicidences(string characters)
+        {
+            DataTable schedules = new DataTable();
+            SqlDataReader renglon;
+            try
+            {
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "pro_listBranchesByCharacters";
+                Comando.Parameters.Add(new SqlParameter("@characters", SqlDbType.Text));
+                Comando.Parameters["@characters"].Value = characters;
+                Conexion.Open();
+                renglon = Comando.ExecuteReader();
+                schedules.Load(renglon);
+            }
+            catch (SqlException e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+                Comando.Parameters.Clear();
+            }
+            return schedules;
         }
 
     }

@@ -15,5 +15,9 @@ namespace CapaLogicaNegocio.Tables
         {
             return brancheData.tableBranches();
         }
+        public DataTable branchesBranchesByCharactersConicidences(string characters)
+        {
+            return brancheData.listBranchesBranchesByCharactersConicidences(characters);
+        }
     }
 }

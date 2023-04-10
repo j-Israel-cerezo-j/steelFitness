@@ -88,7 +88,7 @@ namespace CapaLogicaNegocio.Services
             {
                 throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
             }
-            return Converter.ToJson(productBrancheTable.tableByIdProduct(Convert.ToInt32(strId))).ToString();
+            return Converter.ToJson(productBrancheTable.ByIdProduct(Convert.ToInt32(strId))).ToString();
         }
         public string jsonProductBrancheTableByIdBranche(string strId)
         {
@@ -96,7 +96,7 @@ namespace CapaLogicaNegocio.Services
             {
                 throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
             }
-            return Converter.ToJson(productBrancheTable.tableByIdBranche(Convert.ToInt32(strId))).ToString();
+            return Converter.ToJson(productBrancheTable.ByIdBranche(Convert.ToInt32(strId))).ToString();
         }
         public string jsonRecoverData(string strId)
         {
@@ -136,6 +136,18 @@ namespace CapaLogicaNegocio.Services
                 }
             }
             return ban;
+        }
+        public List<string> onkeyupSearchList(string caracteres)
+        {
+            caracteres = "%" + caracteres + "%";
+            return Converter.ToList(productBrancheTable.ByCharacters(caracteres));
+
+        }
+        public string onkeyupSearchTable(string caracteres)
+        {
+            var namesTypeDateTime = new List<string>() { "horaInicio", "horaCierre" };
+            return Converter.ToJson(productBrancheTable.ByCharacters(caracteres)).ToString();
+
         }
     }
 }

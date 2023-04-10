@@ -154,15 +154,15 @@
     <script src="js/personalizados/Branches/recoverData.js"></script>
     <script src="js/personalizados/Branches/update.js"></script>
     <script src="js/personalizados/Branches/reset.js"></script>
-    
-    <script src="js/personalizados/Branches/buildCardsImages.js"></script>
-    <script src="js/personalizados/utils/Ajax/request.js"></script>
-    <script src="js/personalizados/typeClassrooms/OnkeyupSearch.js"></script>        
+    <script src="js/personalizados/Branches/OnkeyupSearch.js"></script>
+    <script src="js/personalizados/Branches/buildCardsImages.js"></script>    
 
 	<script src="js/personalizados/FacadeCatalogosRecoverData/switchCatalogosRecoverData.js"></script>
-
+	
 	<script src="js/personalizados/Ajax/recoverData.js"></script>
     <script src="js/personalizados/Ajax/submitAjaxCatalogos.js"></script>
+
+	<script src="js/personalizados/utils/Ajax/request.js"></script>
 
     <script src="js/personalizados/utils/styleBoxShadow.js"></script>
     <script src="js/personalizados/utils/Ajax/requestTables.js"></script>

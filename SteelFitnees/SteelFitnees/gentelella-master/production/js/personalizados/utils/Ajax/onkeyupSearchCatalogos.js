@@ -1,7 +1,7 @@
-﻿function OnkeyupSerchCatalogos(catalogo, formData, typeWorker="") {
+﻿    function OnkeyupSerchCatalogos(formData,url) {
     var f = $(this);
     $.ajax({
-        url: "Handlers/OnkeyupSearchCatalogosHandler.aspx?catalogo=" + catalogo,
+        url: url,
         type: "post",
         dataType: "json",
         data: formData,
@@ -11,10 +11,10 @@
         success: function (resultado) {
             if (resultado.success) {
                 if (resultado.data.accion == "sinCoincidencias") {
-                    SwitchTableOnkeyup(resultado.data.catalogo, resultado.data.table, false, typeWorker);
+                    SwitchTableOnkeyup(resultado.data.catalogo, resultado.data.table, false);
                 } else {
                     mostrarCoincidenciasBusqueda(resultado.data.coincidencias);
-                    SwitchTableOnkeyup(resultado.data.catalogo, resultado.data.table, true, typeWorker);
+                    SwitchTableOnkeyup(resultado.data.catalogo, resultado.data.table, true);
                 }                
             } else {
                 Swal.fire({

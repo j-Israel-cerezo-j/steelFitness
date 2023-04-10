@@ -24,6 +24,7 @@ namespace CapaLogicaNegocio.Services
         private DayData dayData = new DayData();
         private DayUpdate dayUpdate = new DayUpdate();
         private HoursList hoursList = new HoursList();
+        private DaysTable daysTable= new DaysTable();
         public bool add(Dictionary<string, string> request)
         {
             bool ban = false;
@@ -92,13 +93,26 @@ namespace CapaLogicaNegocio.Services
             {
                 throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
             }
-            var hours = new List<Day>();
-            hours.Add(dayData.data(Convert.ToInt32(strId)));
+            var hours = new List<Day>
+            {
+                dayData.data(Convert.ToInt32(strId))
+            };
             return Converter.ToJson(hours);
         }
         public string jsonDays()
         {
             return Converter.ToJson(dayList.listDays());
+        }
+        public List<string> onkeyupSearchList(string caracteres)
+        {
+            caracteres = "%" + caracteres + "%";
+            return Converter.ToList(daysTable.listDaysByCharactersConicidences(caracteres));
+
+        }
+        public string onkeyupSearchTable(string caracteres)
+        {
+            return Converter.ToJson(dayList.tableDaysByCharactersConicidences(caracteres));
+
         }
     }
 }

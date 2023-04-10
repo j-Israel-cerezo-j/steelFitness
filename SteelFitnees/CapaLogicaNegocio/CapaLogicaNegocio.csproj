@@ -66,6 +66,7 @@
     <Compile Include="Exceptions\LoginException.cs" />
     <Compile Include="Exceptions\ServiceException.cs" />
     <Compile Include="FacadeCrudCatalogs.cs" />
+    <Compile Include="FacadeOnkeyup.cs" />
     <Compile Include="FacedeFilter.cs" />
     <Compile Include="Inserts\Insert.cs" />
     <Compile Include="Lists\BrancheList.cs" />

@@ -181,6 +181,7 @@
     <Content Include="gentelella-master\production\Handlers\filterByController.aspx" />
     <Content Include="gentelella-master\production\Handlers\hoursController.aspx" />
     <Content Include="gentelella-master\production\Handlers\imagesController.aspx" />
+    <Content Include="gentelella-master\production\Handlers\OnkeyupSearchController.aspx" />
     <Content Include="gentelella-master\production\Handlers\productsController.aspx" />
     <Content Include="gentelella-master\production\Handlers\sucursalesController.aspx" />
     <Content Include="gentelella-master\production\Handlers\tablesController.aspx" />
@@ -194,6 +195,7 @@
     <Content Include="gentelella-master\production\js\personalizados\addProductsToBranches\build\slc\buildProductsSlc.js" />
     <Content Include="gentelella-master\production\js\personalizados\addProductsToBranches\build\table\buildTable.js" />
     <Content Include="gentelella-master\production\js\personalizados\addProductsToBranches\delete.js" />
+    <Content Include="gentelella-master\production\js\personalizados\addProductsToBranches\OnkeyupSearch.js" />
     <Content Include="gentelella-master\production\js\personalizados\addProductsToBranches\recoverData.js" />
     <Content Include="gentelella-master\production\js\personalizados\addProductsToBranches\requestBranches.js" />
     <Content Include="gentelella-master\production\js\personalizados\addProductsToBranches\requestBuildFilter.js" />
@@ -204,6 +206,7 @@
     <Content Include="gentelella-master\production\js\personalizados\Branches\buildCardsImages.js" />
     <Content Include="gentelella-master\production\js\personalizados\Branches\buildTable.js" />
     <Content Include="gentelella-master\production\js\personalizados\Branches\delete.js" />
+    <Content Include="gentelella-master\production\js\personalizados\Branches\OnkeyupSearch.js" />
     <Content Include="gentelella-master\production\js\personalizados\Branches\recoverData.js" />
     <Content Include="gentelella-master\production\js\personalizados\Branches\reset.js" />
     <Content Include="gentelella-master\production\js\personalizados\Branches\tableOnload.js" />
@@ -227,6 +230,7 @@
     <Content Include="gentelella-master\production\js\personalizados\hours\requestDays.js" />
     <Content Include="gentelella-master\production\js\personalizados\indexUser\build\buildCardsComments.js" />
     <Content Include="gentelella-master\production\js\personalizados\indexUser\build\buildWeeksSlc.js" />
+    <Content Include="gentelella-master\production\js\personalizados\indexUser\OnkeyupSearch.js" />
     <Content Include="gentelella-master\production\js\personalizados\indexUser\requestComments.js" />
     <Content Include="gentelella-master\production\js\personalizados\indexUser\requestFilterByDates.js" />
     <Content Include="gentelella-master\production\js\personalizados\Index\build\buildCardsBranches.js" />
@@ -238,6 +242,7 @@
     <Content Include="gentelella-master\production\js\personalizados\Productos\add.js" />
     <Content Include="gentelella-master\production\js\personalizados\Productos\buildTable.js" />
     <Content Include="gentelella-master\production\js\personalizados\Productos\delete.js" />
+    <Content Include="gentelella-master\production\js\personalizados\Productos\OnkeyupSearch.js" />
     <Content Include="gentelella-master\production\js\personalizados\Productos\recoverData.js" />
     <Content Include="gentelella-master\production\js\personalizados\Productos\resertBtn.js" />
     <Content Include="gentelella-master\production\js\personalizados\Productos\tableOnload.js" />
@@ -5853,6 +5858,13 @@
     </Compile>
     <Compile Include="gentelella-master\production\Handlers\imagesController.aspx.designer.cs">
       <DependentUpon>imagesController.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gentelella-master\production\Handlers\OnkeyupSearchController.aspx.cs">
+      <DependentUpon>OnkeyupSearchController.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gentelella-master\production\Handlers\OnkeyupSearchController.aspx.designer.cs">
+      <DependentUpon>OnkeyupSearchController.aspx</DependentUpon>
     </Compile>
     <Compile Include="gentelella-master\production\Handlers\productsController.aspx.cs">
       <DependentUpon>productsController.aspx</DependentUpon>

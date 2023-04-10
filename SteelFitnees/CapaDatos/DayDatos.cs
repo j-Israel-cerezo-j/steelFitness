@@ -200,5 +200,65 @@ namespace CapaDatos
             }
             return days;
         }
+        public List<Day> tableDaysByCharactersConicidences(string characters)
+        {
+            List<Day> days = new List<Day>();
+            try
+            {
+                SqlDataReader renglon;
+                Conexion.Open();
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "pro_listDaysByCharacters";
+                Comando.Parameters.Add(new SqlParameter("@characters", SqlDbType.Text));
+                Comando.Parameters["@characters"].Value = characters;
+                renglon = Comando.ExecuteReader();
+                while (renglon.Read())
+                {
+                    days.Add(new Day(renglon));
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+                Comando.Parameters.Clear();
+
+            }
+            return days;
+        }
+        public DataTable listDaysByCharactersConicidences(string characters)
+        {
+            DataTable schedules = new DataTable();
+            SqlDataReader renglon;
+            try
+            {
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "pro_listDaysByCharacters";
+                Comando.Parameters.Add(new SqlParameter("@characters", SqlDbType.Text));
+                Comando.Parameters["@characters"].Value = characters;
+                Conexion.Open();
+                renglon = Comando.ExecuteReader();
+                schedules.Load(renglon);
+            }
+            catch (SqlException e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+                Comando.Parameters.Clear();
+            }
+            return schedules;
+        }
     }
 }

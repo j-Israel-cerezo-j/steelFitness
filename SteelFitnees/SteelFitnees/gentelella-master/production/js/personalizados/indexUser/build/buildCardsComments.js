@@ -1,4 +1,4 @@
-﻿function buildCardsComments(json) {
+﻿function buildCardsComments(json, jsonOnkeyp = true) {
     document.getElementById("containerCardsComments").innerHTML = "";
     document.getElementById("carouselExampleDark").innerHTML = "";
     
@@ -31,7 +31,11 @@
         document.getElementById("containerCardsComments").innerHTML = html
         document.getElementById("containerSlcWeeks").style.display = "block";
         buildWeeks()
-    } else {
+    }
+    else if (!jsonOnkeyp) {
+        document.getElementById("containerCardsComments").innerHTML = "<h4 class='text-center'>No se encontro ninguna coincidencia</h4>"
+    }
+    else {
         document.getElementById("containerCardsComments").innerHTML = `<h1 style="text-align: center;margin-top:40px">Sin comentarios por el momento</h1>`
     }
 }

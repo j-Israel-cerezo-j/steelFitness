@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
             <!-- Masthead-->
     <header class="masthead">
-        <div class="container mb-5">
+        <div class="container" style="margin-bottom:100px">
             
         </div>
     </header>

@@ -265,5 +265,33 @@ namespace CapaDatos
             }
             return ban;
         }
+        public DataTable tableProductBranchesByCharacters(string characters)
+        {
+            DataTable schedules = new DataTable();
+            SqlDataReader renglon;
+            try
+            {
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "pro_tableProductBranchesByCharacters";
+                Comando.Parameters.Add(new SqlParameter("@characters", SqlDbType.Text));
+                Comando.Parameters["@characters"].Value = characters;
+                Conexion.Open();
+                renglon = Comando.ExecuteReader();
+                schedules.Load(renglon);
+            }
+            catch (SqlException e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+                Comando.Parameters.Clear();
+            }
+            return schedules;
+        }
     }
 }

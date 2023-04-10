@@ -214,5 +214,65 @@ namespace CapaDatos
             }
             return ban;
         }
+        public List<Product> listProductByCharacters(string characters)
+        {
+            List<Product> products = new List<Product>();
+            try
+            {
+                SqlDataReader renglon;
+                Conexion.Open();
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "pro_listProductsByCharacters";
+                Comando.Parameters.Add(new SqlParameter("@characters", SqlDbType.VarChar));
+                Comando.Parameters["@characters"].Value = characters;
+                renglon = Comando.ExecuteReader();
+                while (renglon.Read())
+                {
+                    products.Add(new Product(renglon));
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+                Comando.Parameters.Clear();
+
+            }
+            return products;
+        }
+        public DataTable listProductsByCharacters(string characters)
+        {
+            DataTable schedules = new DataTable();
+            SqlDataReader renglon;
+            try
+            {
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "pro_listProductsByCharacters";
+                Comando.Parameters.Add(new SqlParameter("@characters", SqlDbType.VarChar));
+                Comando.Parameters["@characters"].Value = characters;
+                Conexion.Open();
+                renglon = Comando.ExecuteReader();
+                schedules.Load(renglon);
+            }
+            catch (SqlException e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+                Comando.Parameters.Clear();
+            }
+            return schedules;
+        }
     }
 }

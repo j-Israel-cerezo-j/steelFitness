@@ -100,18 +100,19 @@
     <script src="js/personalizados/Dayass/deleteDays.js"></script>
     <script src="js/personalizados/Dayass/recoverDate.js"></script>		
     <script src="js/personalizados/Dayass/update.js"></script>
+	<script src="js/personalizados/Dayass/onkeyupSearchh.js"></script>	
+
 	<script src="js/personalizados/Ajax/submitAjaxCatalogos.js"></script>
     <script src="js/personalizados/Ajax/recoverData.js"></script>
+
 	<script src="js/personalizados/FacadeCatalogosRecoverData/switchCatalogosRecoverData.js"></script>
 
-	<script src="js/personalizados/utils/Ajax/requestTables.js"></script>
-	
-	<script src="js/personalizados/Dayass/onkeyupSearchh.js"></script>	
-    	
-	<script src="js/personalizados/utils/defaultBtnsDisplay.js"></script>	
-	<script src="js/personalizados/utils/switchTableOnkeyup.js"></script>
+	<script src="js/personalizados/utils/Ajax/requestTables.js"></script>		
     <script src="js/personalizados/utils/Ajax/onkeyupSearchCatalogos.js"></script>
-	 <script src="js/personalizados/utils/onkeyupInputEmpty.js"></script>
+
+	<script src="js/personalizados/utils/switchTableOnkeyup.js"></script>    
+	<script src="js/personalizados/utils/defaultBtnsDisplay.js"></script>		
+	<script src="js/personalizados/utils/onkeyupInputEmpty.js"></script>
     <script src="js/personalizados/utils/buildMsjValidOrInvalid.js"></script>    
     <script src="js/personalizados/utils/onkeyupNoSelectInSlc.js"></script>
     

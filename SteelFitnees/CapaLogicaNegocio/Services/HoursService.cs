@@ -14,6 +14,8 @@ using CapaLogicaNegocio.Deletes;
 using CapaLogicaNegocio.RecoverData;
 using CapaLogicaNegocio.Updates;
 using CapaLogicaNegocio.Tables;
+using System.Data;
+using System.Web.UI.WebControls;
 
 namespace CapaLogicaNegocio.Services
 {
@@ -50,7 +52,7 @@ namespace CapaLogicaNegocio.Services
         public string jsonHoursTable()
         {
             var namesTypeDateTime = new List<string>() { "horaInicio", "horaCierre" };
-            return Converter.ToJson(schedulesTable.tableSchedules(),true, namesTypeDateTime).ToString();
+            return Converter.ToJson(schedulesTable.Schedules(),true, namesTypeDateTime).ToString();
         }
         public bool deleteHours(string strIds)
         {
@@ -138,7 +140,19 @@ namespace CapaLogicaNegocio.Services
                 throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
             }
             var namesTypeDateTime = new List<string>() { "horaInicio", "horaCierre" };
-            return Converter.ToJson(schedulesTable.tableSchedulesByIdDay(Convert.ToInt32(strId)), true, namesTypeDateTime).ToString();
+            return Converter.ToJson(schedulesTable.ByIdDay(Convert.ToInt32(strId)), true, namesTypeDateTime).ToString();
+        }
+        public List<string> onkeyupSearchList(string caracteres)
+        {
+            caracteres = "%" + caracteres + "%";
+            return Converter.ToList(schedulesTable.ByCharacters(caracteres));
+
+        }
+        public string onkeyupSearchTable(string caracteres)
+        {
+            var namesTypeDateTime = new List<string>() { "horaInicio", "horaCierre" };
+            return Converter.ToJson(schedulesTable.ByCharacters(caracteres),true,namesTypeDateTime).ToString();
+
         }
     }
 }

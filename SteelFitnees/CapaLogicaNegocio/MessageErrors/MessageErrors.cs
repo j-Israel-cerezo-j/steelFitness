@@ -8,6 +8,9 @@ namespace CapaLogicaNegocio.MessageErrors
 {
     public class MessageErrors
     {
+        public static string incorrectFomrmantEmail = "El correo electronico no tiene el formato correcto, verifica por favor";
+        public static string failedSendEmail = "Ocurrió un error al enviar el correo electrónico";
+        public static string authenticationFailedSendEmail = "Tu correo y/o contraseña son incorrectos, verifica porr favor";
         public static string errorDeleteBrancheReference = "No puedes eliminar la sucursal por que tiene productos asignados";
         public static string errorDeleteDayReference = "No puedes eliminar el dia ya que esta asginado a un horario";
         public static string errorDeletePorductReference = "No puedes eliminar el producto ya que esta asginado a una sucursal";

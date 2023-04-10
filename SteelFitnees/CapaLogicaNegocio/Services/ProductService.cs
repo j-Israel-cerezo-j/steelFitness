@@ -102,7 +102,7 @@ namespace CapaLogicaNegocio.Services
             {
                 throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
             }
-            return Converter.ToJson(productTable.tableByIdBranche(Convert.ToInt32(strId))).ToString();
+            return Converter.ToJson(productTable.ByIdBranche(Convert.ToInt32(strId))).ToString();
         }
         public bool deleteProducts(string strIds)
         {
@@ -165,6 +165,17 @@ namespace CapaLogicaNegocio.Services
         private string retiveFileNameUser(string field, string table, string fieldWhere, string idsUser)
         {
             return Select.findFieldWhere(field, table, fieldWhere, idsUser).ToString();
-        }       
+        }
+        public List<string> onkeyupSearchList(string caracteres)
+        {
+            caracteres = "%" + caracteres + "%";
+            return Converter.ToList(productTable.listPorducrsByCharacters(caracteres));
+
+        }
+        public string onkeyupSearchTable(string caracteres)
+        {            
+            return Converter.ToJson(productList.listProductByCharacters(caracteres)).ToString();
+
+        }
     }
 }

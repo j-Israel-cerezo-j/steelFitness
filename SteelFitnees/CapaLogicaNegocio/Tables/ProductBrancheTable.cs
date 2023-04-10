@@ -14,13 +14,17 @@ namespace CapaLogicaNegocio.Tables
         {
             return productBrancheData.tableProductBranches();
         }
-        public DataTable tableByIdProduct(int id)
+        public DataTable ByIdProduct(int id)
         {
             return productBrancheData.tableProductBranchesByIdProduct(id);
         }
-        public DataTable tableByIdBranche(int id)
+        public DataTable ByIdBranche(int id)
         {
             return productBrancheData.tableProductBranchesByIdBranche(id);
+        }
+        public DataTable ByCharacters(string characters)
+        {
+            return productBrancheData.tableProductBranchesByCharacters(characters);
         }
     }
 }

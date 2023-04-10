@@ -17,10 +17,17 @@ function sendAjax(formData) {
         success: function (resultado) {
             swal.close()
             if (resultado.success) {
-                console.log(resultado)
                 if (resultado.data.type == "send") {
                     Swal.fire('Correo enviado a los contactos registrados')
-                    document.getElementById("msjImagenCargadaAutomatica").innerHTML=""
+                    document.getElementById("msjImagenCargadaAutomatica").innerHTML = ""
+                    document.getElementById("form1").reset();
+                    document.getElementById("image").setAttribute("src", "");
+                    document.getElementById("msjImagenCargadaAutomatica").innerHTML = ""
+                    onkeyupInputEmtyy('asunto');
+                    onkeyupInputEmtyy('senderMail');
+                    onkeyupInputEmtyy('senderPassword');
+                    onkeyupInputEmtyy('formFile');
+                    onkeyupInputEmtyy('info');
                 }
             }
             else {

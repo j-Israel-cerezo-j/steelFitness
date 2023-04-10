@@ -19,5 +19,9 @@ namespace CapaLogicaNegocio.Lists
         public List<ProductBranch> listProductBranches() {
             return productBrancheData.listProductBranches();
         }
+        public List<Product> listProductByCharacters(string characters)
+        {
+            return productData.listProductByCharacters(characters);
+        }
     }
 }

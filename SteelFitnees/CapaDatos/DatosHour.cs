@@ -264,5 +264,33 @@ namespace CapaDatos
             }
             return schedules;
         }
+        public DataTable tableHorariosByCharacters(string character)
+        {
+            DataTable schedules = new DataTable();
+            SqlDataReader renglon;
+            try
+            {
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "pro_tableHorariosByCharacters";
+                Comando.Parameters.Add(new SqlParameter("@characters", SqlDbType.Text));
+                Comando.Parameters["@characters"].Value = character;
+                Conexion.Open();
+                renglon = Comando.ExecuteReader();
+                schedules.Load(renglon);
+            }
+            catch (SqlException e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+                Comando.Parameters.Clear();
+            }
+            return schedules;
+        }
     }
 }

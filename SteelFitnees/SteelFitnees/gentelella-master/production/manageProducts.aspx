@@ -129,19 +129,20 @@
     <script src="js/personalizados/Productos/recoverData.js"></script>
     <script src="js/personalizados/Productos/update.js"></script>
     <script src="js/personalizados/Productos/resertBtn.js"></script>
-    <script src="js/personalizados/typeClassrooms/OnkeyupSearch.js"></script>        
+    <script src="js/personalizados/Productos/OnkeyupSearch.js"></script>
 
 	<script src="js/personalizados/FacadeCatalogosRecoverData/switchCatalogosRecoverData.js"></script>
 
 	<script src="js/personalizados/Ajax/recoverData.js"></script>
     <script src="js/personalizados/Ajax/submitAjaxCatalogos.js"></script>
 
-    <script src="js/personalizados/utils/styleBoxShadow.js"></script>
-    <script src="js/personalizados/utils/Ajax/requestTables.js"></script>
+	<script src="js/personalizados/utils/Ajax/onkeyupSearchCatalogos.js"></script>
+	<script src="js/personalizados/utils/Ajax/requestTables.js"></script>
+
+    <script src="js/personalizados/utils/styleBoxShadow.js"></script>    
     <script src="js/personalizados/utils/defaultBtnsDisplay.js"></script>
     <script src="js/personalizados/utils/validatorForm.js"></script>
-	<script src="js/personalizados/utils/switchTableOnkeyup.js"></script>
-    <script src="js/personalizados/utils/Ajax/onkeyupSearchCatalogos.js"></script>
+	<script src="js/personalizados/utils/switchTableOnkeyup.js"></script>    
 	<script src="js/personalizados/utils/onkeyupInputEmpty.js"></script>
 	<script type="text/javascript">
         window.onload = function () {

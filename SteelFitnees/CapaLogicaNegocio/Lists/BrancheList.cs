@@ -23,5 +23,13 @@ namespace CapaLogicaNegocio.Lists
         {
             return brancheData.listCommentsByIdBranchesAndWeek(id, weekIni, weekEnd);
         }
+        public List<CommentBranch> listCommentsByIdBranchesAndCharacteres(int id,string characteres )
+        {
+            return brancheData.listCommentsByIdBranchesAndCharacteres(id, characteres);
+        }
+        public List<Branche> listBranchesBranchesByCharactersConicidences(string characters)
+        {
+            return brancheData.tableBranchesBranchesByCharactersConicidences(characters);
+        }
     }
 }

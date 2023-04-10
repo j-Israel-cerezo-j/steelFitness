@@ -10,17 +10,21 @@ namespace CapaLogicaNegocio.Tables
     public class SchedulesTable
     {
         private DatosHour datosHour = new DatosHour();
-        public DataTable tableSchedules()
+        public DataTable Schedules()
         {
             return datosHour.tableHours();
         }
-        public DataTable tableSchedulesByIdBranche(int id)
+        public DataTable ByIdBranche(int id)
         {
             return datosHour.horariosByIdBranche(id);
         }
-        public DataTable tableSchedulesByIdDay(int id)
+        public DataTable ByIdDay(int id)
         {
             return datosHour.horariosByIdDay(id);
+        }
+        public DataTable ByCharacters(string characters)
+        {
+            return datosHour.tableHorariosByCharacters(characters);
         }
     }
 }

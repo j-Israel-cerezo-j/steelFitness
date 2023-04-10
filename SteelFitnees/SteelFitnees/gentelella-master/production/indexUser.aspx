@@ -33,6 +33,19 @@
             <div class="col-lg-3 col-md-3 col-sm-10 ml-3">
                 <h2 style="text-align:center" id="weekSelectedText"></h2>
             </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xsm-12"  style="margin-top:19px;justify-content:right">
+				<form id="formOnkeyup">												
+					<div class="input-group" > 
+					    <div class="form-outline" style="width: 100%;">
+							<svg style=" position: absolute;width: 20px; height: 20px; left: 12px; top: 50%; transform: translateY(-50%);" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+	    						<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+	    					</svg>
+					        <input class="form-control" list="datalistOptionsSerch" id="exampleDataList" placeholder="Buscar por fecha en este formato 2023-04-06 por favor..." style="border-radius:10px; width: 100%;padding-left: 40px;padding-right: 15px;" onkeyup="onkeyupSearchh()" name="onkeyupCoincidencias">
+					        <datalist id="datalistOptionsSerch"></datalist>
+					    </div>
+					</div>
+				</form>
+			</div
         </div>
         <div id="containerCardsComments" class="row mt-3" style="width: 100%;"></div>
     </div>
@@ -87,9 +100,14 @@
     <script src="js/personalizados/indexUser/requestComments.js"></script>
     <script src="js/personalizados/indexUser/build/buildCardsComments.js"></script>
     <script src="js/personalizados/indexUser/requestFilterByDates.js"></script>
-
-    <script src="js/personalizados/utils/Ajax/request.js"></script>
+    <script src="js/personalizados/indexUser/OnkeyupSearch.js"></script>
     <script src="js/personalizados/indexUser/build/buildWeeksSlc.js"></script>
+
+    <script src="js/personalizados/utils/Ajax/onkeyupSearchCatalogos.js"></script>
+    <script src="js/personalizados/utils/Ajax/request.js"></script>
+   
+    <script src="js/personalizados/utils/switchTableOnkeyup.js"></script>
+        
     <script type="text/javascript">
         window.onload = function () {
             requestBranches()

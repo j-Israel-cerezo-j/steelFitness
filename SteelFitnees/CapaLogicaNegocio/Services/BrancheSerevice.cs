@@ -180,8 +180,10 @@ namespace CapaLogicaNegocio.Services
             {
                 throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
             }
-            var branches = new List<Branche>();
-            branches.Add(brancherData.dataBrancheByIdBranche(Convert.ToInt32(strId)));
+            var branches = new List<Branche>
+            {
+                brancherData.dataBrancheByIdBranche(Convert.ToInt32(strId))
+            };
             return Converter.ToJson(branches);
         }
         public Branche getBrancheById(string strId)
@@ -212,7 +214,7 @@ namespace CapaLogicaNegocio.Services
                 throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
             }
             var namesTypeDateTime=new List<string>() { "horaInicio", "horaCierre" };
-            return Converter.ToJson(schedulesTable.tableSchedulesByIdBranche(Convert.ToInt32(strId)),true, namesTypeDateTime).ToString();
+            return Converter.ToJson(schedulesTable.ByIdBranche(Convert.ToInt32(strId)),true, namesTypeDateTime).ToString();
         }
         public string getProductsByIdBranche(string strId)
         {
@@ -220,7 +222,7 @@ namespace CapaLogicaNegocio.Services
             {
                 throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
             }
-            return Converter.ToJson(productTable.tableByIdBranche(Convert.ToInt32(strId))).ToString();
+            return Converter.ToJson(productTable.ByIdBranche(Convert.ToInt32(strId))).ToString();
         }
 
         public bool addCommmentsByBranche(Dictionary<string, string> request,string strId)
@@ -273,6 +275,34 @@ namespace CapaLogicaNegocio.Services
             DateTime weekEnd = weekIni.AddDays(7);
 
             return Converter.ToJson(brancheList.listCommentsByIdBracheAndWeek(Convert.ToInt32(strId),weekIni,weekEnd));
+        }
+        public string onkeyupCommentsByIdBranchesAndCharacteres(string strId, string characteres)
+        {
+            if (characteres!="")
+            {
+                if (strId == "" || strId == "0")
+                {
+                    throw new ServiceException(MessageErrors.MessageErrors.idRecordEmpty);
+                }
+                characteres = "%" + characteres + "%";
+                return Converter.ToJson(brancheList.listCommentsByIdBranchesAndCharacteres(Convert.ToInt32(strId), characteres));
+            }
+            else
+            {
+               return jsonCommentsBranches(strId);
+            }
+            
+        }
+        public List<string> onkeyupSearchList(string caracteres)
+        {
+            caracteres = "%" + caracteres + "%";
+            return Converter.ToList(branchesTable.branchesBranchesByCharactersConicidences(caracteres));
+
+        }
+        public string onkeyupSearchTable(string caracteres)
+        {            
+            return Converter.ToJson(brancheList.listBranchesBranchesByCharactersConicidences(caracteres));
+
         }
     }
 }
