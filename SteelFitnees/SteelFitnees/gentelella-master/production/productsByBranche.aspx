@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="templates/fitnessclub-master/assets/css/style.css"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <section class="home-blog-area ">
+    <section class="home-blog-area " style="z-index:1 !important">
             <div class="container">
                 
                 <!-- Section Tittle -->

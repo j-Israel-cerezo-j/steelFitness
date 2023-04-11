@@ -8,7 +8,7 @@
     <link rel="manifest" href="site.webmanifest"/>
     <link rel="shortcut icon" type="templates/fitnessclub-master/image/x-icon" href="templates/fitnessclub-master/assets/img/favicon.ico"/>
 	<!-- CSS here -->
-	
+	<link href="css/personalizados/reflejos.css" rel="stylesheet" />
 	
 	<link rel="stylesheet" href="templates/fitnessclub-master/assets/css/style.css"/>
 </asp:Content>
@@ -20,7 +20,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12">
                     <!-- about-img -->
-                    <div class="about-img ">
+                    <div class="about-img reflejo">
                         <img  src="<%=getListImagesById[0].path %>" alt="">
                     </div>
                 </div>
@@ -117,13 +117,13 @@
     <section class="wantToWork-area w-padding section-bg" data-background="templates/fitnessclub-master/assets/img/gallery/section_bg02.png">
         <div class="container">
             <div class="row align-items-center justify-content-between">
-                <div class="col-xl-4 col-lg-4 col-md-8 col-sm-10">
+                <div class="col-xl-4 col-lg-4 col-md-8 col-sm-10" style="width:100%">
                     <div class="wantToWork-caption">
                         <h2>Visitanos pronto</h2>
                     </div>
                 </div> 
-                <form id="formComments" class="g-3 needs-validation" novalidate style="width:35%"> 
-                    <div style="width:100%" class="col-xl-4 col-lg-4 col-md-8 col-sm-10">
+                <form id="formComments" class="g-3 needs-validation" novalidate style="width:100%"> 
+                    <div style="width:100%" class="col-xl-4 col-lg-4 col-md-8 col-sm-12 col-xsm-12">
                         <label style="color:white" class="form-label">Comentanos tus sugerencias de la sucursal o si fue de tu agarado</label>
                         <textarea class="form-control" rows="6" id="comments" name="comments" required="required" onkeyup="onkeyupInputEmtyy('comments')"></textarea>
                         <div class="valid-feedback">
@@ -134,7 +134,7 @@
 						</div>
                     </div>
                 </form>
-                <div class="col-xl-2 col-lg-2 col-md-3">
+                <div class="col-xl-2 col-lg-2 col-md-3 mt-5">
                     <button class="btn btn-primary" onclick="requestComments()">Enviar</button>
                 </div>
             </div>
