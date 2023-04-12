@@ -9,7 +9,6 @@
     <link rel="shortcut icon" type="templates/fitnessclub-master/image/x-icon" href="templates/fitnessclub-master/assets/img/favicon.ico"/>
 	<!-- CSS here -->
 	<link href="css/personalizados/reflejos.css" rel="stylesheet" />
-	
 	<link rel="stylesheet" href="templates/fitnessclub-master/assets/css/style.css"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -38,7 +37,7 @@
             </div>
         </div>
        <input type="hidden" value="<%=getIdBranche %>" id="idBranche" />
-    </section>
+    </section>    
     <!-- About-2 Area End -->   
     <h1 style="text-align:center">Dias y horarios disponibles de la sucursal<p>Da click en el día</p></h1>
     <%--Horarios inicio--%>
@@ -145,7 +144,8 @@
     <!-- Scroll Up -->
     <div id="back-top" >
         <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
-    </div>    
+    </div>
+
     <script src="js/personalizados/showBranchesDetails/buildProductById.js"></script>
     <script src="js/personalizados/showBranchesDetails/buildSchedule.js"></script>
     <script src="js/personalizados/showBranchesDetails/requestComments.js"></script>

@@ -52,12 +52,14 @@
     <Compile Include="DatosUser.cs" />
     <Compile Include="DayDatos.cs" />
     <Compile Include="DeleteWhere.cs" />
+    <Compile Include="ExceptionDao\ExceptionDao.cs" />
     <Compile Include="FindFrom.cs" />
     <Compile Include="InsesrtsManysDatos.cs" />
     <Compile Include="ProductBrancheData.cs" />
     <Compile Include="ProductData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Querys\Query.cs" />
+    <Compile Include="SearchData.cs" />
     <Compile Include="ValidateIfExits.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

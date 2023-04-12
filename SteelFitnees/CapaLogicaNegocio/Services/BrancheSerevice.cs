@@ -224,7 +224,6 @@ namespace CapaLogicaNegocio.Services
             }
             return Converter.ToJson(productTable.ByIdBranche(Convert.ToInt32(strId))).ToString();
         }
-
         public bool addCommmentsByBranche(Dictionary<string, string> request,string strId)
         {
             bool ban = false;

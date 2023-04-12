@@ -176,6 +176,7 @@
     <Content Include="gentelella-master\production\bootstrap-5.0.2-dist\js\bootstrap.esm.min.js.map" />
     <Content Include="gentelella-master\production\bootstrap-5.0.2-dist\js\bootstrap.js.map" />
     <Content Include="gentelella-master\production\bootstrap-5.0.2-dist\js\bootstrap.min.js.map" />
+    <Content Include="gentelella-master\production\css\personalizados\map.css" />
     <Content Include="gentelella-master\production\frontend\templatesEmailGym\gymMessageHtml.html" />
     <Content Include="gentelella-master\production\Handlers\aboutUsController.aspx" />
     <Content Include="gentelella-master\production\Handlers\contactController.aspx" />
@@ -248,11 +249,15 @@
     <Content Include="gentelella-master\production\js\personalizados\indexUser\requestFilterByDates.js" />
     <Content Include="gentelella-master\production\js\personalizados\Index\build\buildCardsBranches.js" />
     <Content Include="gentelella-master\production\js\personalizados\Index\requestBranches.js" />
+    <Content Include="gentelella-master\production\js\personalizados\masterPrincipal\keydown.js" />
+    <Content Include="gentelella-master\production\js\personalizados\masterPrincipal\OnkeyupSearch.js" />
+    <Content Include="gentelella-master\production\js\personalizados\masterPrincipal\redirect.js" />
     <Content Include="gentelella-master\production\js\personalizados\productByBranches\build\buildCardsProducts.js" />
     <Content Include="gentelella-master\production\js\personalizados\productByBranches\build\slc\buildBranchesSlc.js" />
     <Content Include="gentelella-master\production\js\personalizados\productByBranches\OnkeyupSearch.js" />
     <Content Include="gentelella-master\production\js\personalizados\productByBranches\requestBranches.js" />
     <Content Include="gentelella-master\production\js\personalizados\productByBranches\requestProductByBranche.js" />
+    <Content Include="gentelella-master\production\js\personalizados\productByBranches\requestProductBySearchQueyString.js" />
     <Content Include="gentelella-master\production\js\personalizados\Productos\add.js" />
     <Content Include="gentelella-master\production\js\personalizados\Productos\buildTable.js" />
     <Content Include="gentelella-master\production\js\personalizados\Productos\delete.js" />
@@ -268,6 +273,7 @@
     <Content Include="gentelella-master\production\js\personalizados\showBranchesDetails\buildAlert.js" />
     <Content Include="gentelella-master\production\js\personalizados\showBranchesDetails\buildProductById.js" />
     <Content Include="gentelella-master\production\js\personalizados\showBranchesDetails\buildSchedule.js" />
+    <Content Include="gentelella-master\production\js\personalizados\showBranchesDetails\map.js" />
     <Content Include="gentelella-master\production\js\personalizados\showBranchesDetails\requestComments.js" />
     <Content Include="gentelella-master\production\js\personalizados\utils\Ajax\request.js" />
     <Content Include="gentelella-master\production\js\personalizados\utils\Ajax\requestTables.js" />

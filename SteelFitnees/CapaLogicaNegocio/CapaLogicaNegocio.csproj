@@ -95,6 +95,7 @@
     <Compile Include="Services\HoursService.cs" />
     <Compile Include="Services\ProductBranchService.cs" />
     <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Services\SearchService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Session\Sessions.cs" />
     <Compile Include="Tables\BranchesTable.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Tables\ProductBrancheTable.cs" />
     <Compile Include="Tables\ProductTable.cs" />
     <Compile Include="Tables\SchedulesTable.cs" />
+    <Compile Include="Tables\SearchTable.cs" />
     <Compile Include="Updates\AboutUsUpdate.cs" />
     <Compile Include="Updates\BrancheUpdate.cs" />
     <Compile Include="Updates\DayUpdate.cs" />

@@ -30,6 +30,14 @@ namespace SteelFitnees.gentelella_master.production.Handlers
             {
                 onkeyupSearchProductosByBranche();
             }
+            else if (action == "searchMaster")
+            {
+                onkeyupSearchMasterPage();
+            }
+            else if (action == "actionSearchubmit")
+            {
+                onkeyupSearchMasterPageAction();
+            }
         }
         private void onkeyupSearch()
         {
@@ -45,6 +53,54 @@ namespace SteelFitnees.gentelella_master.production.Handlers
                 data.Add("catalogo", catalogo);                
                 data.Add("coincidencias", coincidencias);
                 data.Add("table", JsonConvert.DeserializeObject(jsonTable));
+                response.success = true;
+
+            }
+            catch (ServiceException e)
+            {
+                response.error = e.getMessage();
+            }
+            data.Add("footeer", "Verificar por favor");
+            response.data = data;
+            getJsonResponse = JsonConvert.SerializeObject(response);
+        }
+        private void onkeyupSearchMasterPage()
+        {
+            var data = new Dictionary<string, Object>();
+            Response response = new Response();
+            string catalogo = Request.QueryString["catalogo"];
+            string caracteresDeBusqueda = Request.Form["onkeyupCoincidenciasMaster"];
+
+            try
+            {
+                var coincidencias = facadeOnkeyup.coincidences(catalogo, caracteresDeBusqueda);
+                data.Add("catalogo", catalogo);
+                data.Add("coincidencias", coincidencias);
+                data.Add("table", "");
+                response.success = true;
+
+            }
+            catch (ServiceException e)
+            {
+                response.error = e.getMessage();
+            }
+            data.Add("footeer", "Verificar por favor");
+            response.data = data;
+            getJsonResponse = JsonConvert.SerializeObject(response);
+        }
+        private void onkeyupSearchMasterPageAction()
+        {
+            var data = new Dictionary<string, Object>();
+            Response response = new Response();
+            string catalogo = Request.QueryString["catalogo"];
+            string search = Request.Form["onkeyupCoincidenciasMaster"];
+
+            try
+            {
+                var responseStr = facadeOnkeyup.searchUrlBySearch(catalogo, search);
+                data.Add("catalogo", catalogo);
+                data.Add("accion", "sinCoincidencias");                
+                data.Add("table", JsonConvert.DeserializeObject<Dictionary<string, Object>>(responseStr));
                 response.success = true;
 
             }

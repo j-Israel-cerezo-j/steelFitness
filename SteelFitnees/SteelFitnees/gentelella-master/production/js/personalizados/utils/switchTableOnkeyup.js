@@ -19,5 +19,7 @@
         case 'productsByBrancheAndCharacteres':
             buildProductById(json, jsonOnkeyp);
             break;
+        case 'actionSearchubmit':
+            redirect(json);
     }
 }

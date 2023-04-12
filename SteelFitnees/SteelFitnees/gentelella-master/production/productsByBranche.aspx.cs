@@ -9,8 +9,13 @@ namespace SteelFitnees.gentelella_master.production
 {
     public partial class productsByBranche : System.Web.UI.Page
     {
+        public int getIdPorduct { get; set; } = -1;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString["id"]!=""&&Request.QueryString!=null)
+            {
+                getIdPorduct = Convert.ToInt32(Request.QueryString["id"]);
+            }
 
         }
     }

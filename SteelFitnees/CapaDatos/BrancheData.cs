@@ -433,6 +433,5 @@ namespace CapaDatos
             }
             return schedules;
         }
-
     }
 }

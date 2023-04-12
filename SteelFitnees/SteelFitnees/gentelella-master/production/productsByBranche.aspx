@@ -59,18 +59,24 @@
                 </div>
             </div>
         </section>
-    <script src="js/personalizados/productByBranches/requestBranches.js"></script>
-    <script src="js/personalizados/productByBranches/build/slc/buildBranchesSlc.js"></script>
-    <script src="js/personalizados/productByBranches/requestProductByBranche.js"></script>
-    <script src="js/personalizados/productByBranches/build/buildCardsProducts.js"></script>
     <script src="js/personalizados/productByBranches/OnkeyupSearch.js"></script>
+    <script src="js/personalizados/productByBranches/requestBranches.js"></script>    
+    <script src="js/personalizados/productByBranches/requestProductByBranche.js"></script>
+    <script src="js/personalizados/productByBranches/build/buildCardsProducts.js"></script>    
+    <script src="js/personalizados/productByBranches/build/slc/buildBranchesSlc.js"></script>
+    <script src="js/personalizados/productByBranches/requestProductBySearchQueyString.js"></script>
 
     <script src="js/personalizados/utils/switchTableOnkeyup.js"></script>
     <script src="js/personalizados/utils/Ajax/onkeyupSearchCatalogos.js"></script>
     <script src="js/personalizados/utils/Ajax/request.js"></script>
     <script type="text/javascript">
         window.onload = function () {
+            var id =<%=getIdPorduct %>
             requestBranches()
+            
+            setTimeout(() => {
+                requestProductBySearchQueyString(id);    
+            }, 1000);
         }
     </script>
 
